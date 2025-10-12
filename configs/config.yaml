@@ -1,0 +1,83 @@
+default:
+  model: ./models/deepseek_v3_mla_absorb.json
+  system:
+    npu:
+      config: systems/A5/david_v121_64P_2DFM.json
+      count: 256
+    host:
+      config: configs/agent_AI/host.yaml
+    storage:
+      config: configs/agent_AI/storage.yaml
+      memory: 1024
+      bandwidth: 4000
+    network:
+      config: configs/agent_AI/network.yaml
+      bandwidth: 100
+    memory:
+      config: configs/agent_AI/memory.yaml
+      speed: 3200
+
+Agents:
+
+  SearchPlanGenerator:
+    name: "blabla"
+    description: "vlsdf"
+    tools:
+      generate_plan:
+        latency: 100
+        task_type: question
+        recycle_limit: 3
+        dependencies: []
+
+  Rag:
+    name: "blabla"
+    description: "vlsdf"
+    tools:
+      embedding_task:
+        task_type: embedding
+        input_tokens: [100]
+        output_tokens: [10000]
+        quant_mode: [
+          [2, 2, 2, 2] # a w c c
+        ]
+        task_round: 1
+        flops_type: [
+          ["float8", "float8", "float8"]
+        ]
+        deploy_config: [
+          [1, 1, 1, 1, 1, 1]
+        ]
+        dependencies:
+          - generate_plan
+      reranker_task:
+        task_type: infer
+        model: ./models/deepseek_v3_mla_absorb.json
+        system: systems/A5/david_v121_64P_2DFM.json
+        seq_size: [32768, 4096]
+        num_procs: 256
+        num_procs_config: [128, 128]
+        deploy_config: [[128, 1, 1, 1, 1, 128], [128, 1, 1, 1, 1, 128]] # attn_dp attn_tp pp moe_dp, moe_tp, ep
+        infer_type: pd-split
+        quant_mode: [1, 1, 1, 1] # a w c c
+        flops_type: ["float8", "float8", "float8"]
+        task_round: 1
+        latency: 600
+        dependencies:
+          - embedding_task
+
+  WebSearch:
+    name: "blabla"
+    description: "vlsdf"
+    tools:
+      web_tool:
+        # remove latency!
+        latency: 100
+        task_type: webtool
+        input_tokens: 100
+        output_tokens: 100
+        extraction_ratio: 0.5 # из исходного текста получается 0.5 чистых данных
+        # был 1мб текста => 500 кб данных => 100к токенов
+        bpe_token_size: 5 # 1 токен это типо 4  или 5 или 6 байта, средний размер токена для среднего языка в вакууме
+        calibration_data: configs/agent_AI/web_tool_A.yaml
+        dependencies:
+          - reranker_task

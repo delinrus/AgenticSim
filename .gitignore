@@ -1,0 +1,16 @@
+# IDE directories and files
+# JetBrains IDEs (PyCharm, IntelliJ, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Visual Studio Code
+.vscode/
+
+# Optional: workspace-specific settings for other editors
+# (Uncomment if you use them)
+# .fleet/
+# .project
+# .settings/
+# .classpath

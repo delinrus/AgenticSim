@@ -1,8 +1,32 @@
 # Архитектура дискретно-событийной симуляции мультиагентной системы
 
 **Автор:** Principal Systems Architect & Simulation Engineer  
-**Дата:** 12 октября 2025  
+**Дата:** 14 октября 2025  
 **Статус:** Design & Planning Phase
+
+---
+
+## КЛЮЧЕВОЕ АРХИТЕКТУРНОЕ РЕШЕНИЕ
+
+**EventQueue хранит только события START (REQUEST_ARRIVAL, TOOL_START)**
+
+Вместо традиционного подхода с тремя типами событий (ARRIVAL, START, FINISH), используется упрощённая модель:
+
+✅ **Что в очереди:** Только запланированные старты задач  
+✅ **Где finish times:** Вычисляются динамически на каждом шаге  
+✅ **Как работает:**
+1. На каждом шаге находим ближайшее завершение среди активных задач
+2. Сравниваем с ближайшим стартом из EventQueue
+3. Продвигаем время в `min(next_start, next_finish)`
+4. Обновляем `remaining_work` для всех активных задач пропорционально прошедшему времени
+
+**Преимущества:**
+- Не нужно удалять/перепланировать FINISH события при изменении resource sharing
+- 100% точность (всегда используем актуальное состояние системы)
+- Меньше событий в очереди
+- Явный контроль над временем симуляции
+
+**Сложность:** O(N_active × N_resources) на каждый шаг (неизбежно при dynamic fair-share)
 
 ---
 
@@ -63,11 +87,17 @@ Event (Событие)
 
 ### 2.2 Типы событий
 
+**В EventQueue хранятся только события старта задач:**
+
 | Тип события | Описание | Payload | Триггеры |
 |-------------|----------|---------|----------|
 | `REQUEST_ARRIVAL` | Поступление нового запроса в систему | `{request_id, request_type}` | Генерируется заранее по Poisson процессу |
 | `TOOL_START` | Начало выполнения инструмента | `{tool_id, request_id, tool_name}` | Завершение всех dependencies OR REQUEST_ARRIVAL для root tools |
-| `TOOL_FINISH` | Завершение выполнения инструмента | `{tool_id, request_id, tool_name}` | Истечение времени выполнения с учётом resource sharing |
+
+**Важно:** События завершения (`TOOL_FINISH`) НЕ хранятся в очереди. Вместо этого на каждом шаге симуляции мы:
+1. Вычисляем ближайший момент завершения работы по любому ресурсу для любой активной задачи
+2. Сравниваем с ближайшим `TOOL_START` из EventQueue
+3. Продвигаем время в минимум из двух значений
 
 ---
 
@@ -139,117 +169,257 @@ def generate_arrival_times(lambda_per_min: float, simulation_duration: float) ->
 
 **Базовый принцип:** В каждый момент времени `t`, если `N` активных инструментов используют ресурс `R` с total capacity `C_R`, каждый получает долю `C_R / N`.
 
-**Формула времени завершения (naive approach):**
-
-Для инструмента `i`, использующего ресурсы `{r₁, r₂, ..., rₖ}`:
+**Формула для вычисления доли:**
 
 ```
-Work_needed[i, r] = load[i, r]  (total work для ресурса r)
+Share[i, r, t] = C_r / N_r(t)
 
-Share[i, r, t] = C_r / N_r(t)   (где N_r(t) = количество активных инструментов, использующих r в момент t)
-
-Completion_time[i, r] = remaining_work[i, r] / Share[i, r]
-
-Actual_completion_time[i] = max{ Completion_time[i, r] : r ∈ resources[i] }
-(лимитирующий ресурс - bottleneck)
+где:
+- C_r = total capacity ресурса r
+- N_r(t) = количество активных инструментов, использующих ресурс r в момент t
 ```
 
-**Проблема:** При изменении `N_r(t)` (старт/завершение других инструментов) необходим пересчёт!
+**Ключевая идея:** Мы НЕ храним запланированные времена завершения. Вместо этого на каждом шаге вычисляем:
+1. Для каждой активной задачи и каждого используемого ресурса: когда завершится работа по этому ресурсу
+2. Находим минимум = момент первого завершения
 
-### 3.3 Алгоритм пересчёта времён завершения (Resource Sharing)
+### 3.3 Алгоритм определения следующего момента симуляции
 
-**Вариант 1: Пересчёт на каждое событие** ✓ (рекомендуется для точности)
+**Основной цикл симуляции:**
 
 ```python
-def recalculate_finish_times(current_time: float, active_tools: Set[ToolInstance]) -> Dict[str, float]:
+def find_next_completion(current_time: float, active_tools: Set[ToolInstance]) -> Tuple[float, str, ResourceType]:
     """
-    Пересчитывает времена завершения всех активных инструментов
-    с учётом текущего fair-share распределения.
+    Находит ближайший момент завершения работы по любому ресурсу для любой активной задачи.
     
     Returns:
-        Dict[tool_id -> predicted_finish_time]
+        (completion_time, tool_id, resource_type) - момент завершения, задача, ресурс
     """
-    # 1. Подсчитать количество активных инструментов для каждого ресурса
+    min_completion_time = float('inf')
+    completing_tool = None
+    completing_resource = None
+    
+    # Подсчитать количество потребителей для каждого ресурса
     resource_consumers = defaultdict(set)
     for tool in active_tools:
         for resource_type in ResourceType:
-            load = tool.get_load(resource_type)
-            if load > 0:
+            if tool.remaining_work[resource_type] > 0:
                 resource_consumers[resource_type].add(tool.tool_id)
     
-    # 2. Для каждого инструмента найти bottleneck resource
-    finish_times = {}
+    # Для каждой задачи и каждого ресурса вычислить время завершения
     for tool in active_tools:
-        max_time = current_time
-        
         for resource_type in ResourceType:
-            load = tool.get_load(resource_type)
-            if load <= 0:
-                continue
+            remaining = tool.remaining_work[resource_type]
+            
+            if remaining <= 0:
+                continue  # Работа по этому ресурсу уже завершена
             
             # Fair share для этого ресурса
             num_consumers = len(resource_consumers[resource_type])
             share = resources[resource_type].total_capacity / num_consumers
             
-            # Оставшаяся работа
-            remaining = tool.remaining_work[resource_type]
+            # Время завершения работы по этому ресурсу
+            completion_time = current_time + (remaining / share)
             
-            # Время до завершения по этому ресурсу
-            time_to_finish = current_time + (remaining / share)
-            max_time = max(max_time, time_to_finish)
+            if completion_time < min_completion_time:
+                min_completion_time = completion_time
+                completing_tool = tool
+                completing_resource = resource_type
+    
+    return min_completion_time, completing_tool, completing_resource
+
+
+def simulation_step():
+    """
+    Один шаг симуляции: определяет следующий момент времени и обрабатывает событие.
+    """
+    # 1. Найти ближайший старт из EventQueue
+    next_start_time = event_queue.peek().timestamp if event_queue else float('inf')
+    
+    # 2. Найти ближайшее завершение среди активных задач
+    next_completion_time, completing_tool, completing_resource = find_next_completion(
+        current_time, active_tools
+    )
+    
+    # 3. Выбрать минимум
+    next_time = min(next_start_time, next_completion_time)
+    
+    if next_time == float('inf'):
+        # Нет больше событий - симуляция завершена
+        return False
+    
+    # 4. Продвинуть время
+    time_delta = next_time - current_time
+    current_time = next_time
+    
+    # 5. Обработать событие
+    if next_time == next_start_time:
+        # Событие старта задачи
+        event = event_queue.pop()
+        handle_tool_start(event)
+    else:
+        # Завершение работы по ресурсу
+        handle_resource_completion(completing_tool, completing_resource, time_delta)
+    
+    return True
+```
+
+**Сложность:** O(|ActiveTools| × |ResourceTypes|) на каждый шаг  
+**Плюсы:** 
+- Не нужно хранить и перепланировать TOOL_FINISH события
+- Всегда актуальные вычисления с учётом текущего состояния
+- Явный контроль над временем симуляции
+
+**Минусы:** 
+- Вычисления на каждом шаге (но это неизбежно при dynamic resource sharing)
+
+### 3.3.1 Пример работы алгоритма
+
+**Сценарий:** Два инструмента (Tool A и Tool B) стартуют одновременно.
+
+```
+Начальное состояние (t=0):
+- Tool A: needs 100 units of CPU, 50 units of Network
+- Tool B: needs 80 units of CPU
+- Resources: CPU capacity = 100, Network capacity = 100
+
+EventQueue: [START(A, t=0), START(B, t=0)]
+Active: []
+```
+
+**Шаг 1: t=0, обработка START(A)**
+```
+Active: [A]
+Remaining work: A = {CPU: 100, Network: 50}
+
+Find next completion:
+- A on CPU: 0 + 100/100 = 1.0 sec
+- A on Network: 0 + 50/100 = 0.5 sec
+=> Next completion: t=0.5 (A finishes Network)
+
+Next event: min(START(B, t=0), completion=0.5) = 0
+=> Process START(B)
+```
+
+**Шаг 2: t=0, обработка START(B)**
+```
+Active: [A, B]
+Remaining work: A = {CPU: 100, Network: 50}, B = {CPU: 80, Network: 0}
+
+Find next completion:
+- A on CPU: 0 + 100/50 = 2.0 sec  (fair-share: 100/2 consumers)
+- A on Network: 0 + 50/100 = 0.5 sec
+- B on CPU: 0 + 80/50 = 1.6 sec
+=> Next completion: t=0.5 (A finishes Network)
+
+Next event: min(EventQueue=empty, completion=0.5) = 0.5
+=> Process completion at t=0.5
+```
+
+**Шаг 3: t=0.5, A завершает Network**
+```
+Update remaining work (time_delta = 0.5):
+- A on CPU: work_done = 50 * 0.5 = 25 => remaining = 100 - 25 = 75
+- A on Network: work_done = 100 * 0.5 = 50 => remaining = 0 ✓ (завершено)
+- B on CPU: work_done = 50 * 0.5 = 25 => remaining = 80 - 25 = 55
+
+Active: [A, B]  (A всё ещё активна, работает над CPU)
+Remaining work: A = {CPU: 75, Network: 0}, B = {CPU: 55, Network: 0}
+
+Find next completion:
+- A on CPU: 0.5 + 75/50 = 2.0 sec
+- B on CPU: 0.5 + 55/50 = 1.6 sec
+=> Next completion: t=1.6 (B finishes CPU)
+```
+
+**Шаг 4: t=1.6, B завершает CPU**
+```
+Update remaining work (time_delta = 1.1):
+- A on CPU: work_done = 50 * 1.1 = 55 => remaining = 75 - 55 = 20
+- B on CPU: work_done = 50 * 1.1 = 55 => remaining = 0 ✓
+
+B полностью завершена (все ресурсы = 0)
+Active: [A]
+Remaining work: A = {CPU: 20, Network: 0}
+
+Find next completion:
+- A on CPU: 1.6 + 20/100 = 1.8 sec  (теперь A одна, получает 100%)
+=> Next completion: t=1.8
+```
+
+**Шаг 5: t=1.8, A завершает CPU**
+```
+Update remaining work (time_delta = 0.2):
+- A on CPU: work_done = 100 * 0.2 = 20 => remaining = 0 ✓
+
+A полностью завершена
+Active: []
+
+Результат:
+- Tool A latency: 1.8 sec
+- Tool B latency: 1.6 sec
+```
+
+**Проверка корректности:**
+- Tool A: CPU работа = 25 (fair-share @ 0.5s) + 55 (fair-share @ 1.1s) + 20 (100% @ 0.2s) = 100 ✓
+- Tool B: CPU работа = 25 (fair-share @ 0.5s) + 55 (fair-share @ 1.1s) = 80 ✓
+- Network: Tool A получила 50 за 0.5s @ 100% capacity ✓
+
+### 3.4 Обработка завершения работы по ресурсу
+
+Когда задача завершает работу по ресурсу, нужно:
+1. Обновить `remaining_work` для ВСЕХ активных задач (так как прошло время `time_delta`)
+2. Проверить, не завершилась ли задача полностью (все ресурсы)
+3. Если завершилась — проверить зависимости и запланировать старты
+
+```python
+def handle_resource_completion(tool: ToolInstance, resource: ResourceType, time_delta: float) -> None:
+    """
+    Обрабатывает завершение работы по одному ресурсу для одной задачи.
+    
+    Args:
+        tool: задача, которая завершила работу по ресурсу
+        resource: ресурс, по которому завершена работа
+        time_delta: прошедшее время с предыдущего шага
+    """
+    # 1. Обновить remaining_work для ВСЕХ активных задач
+    #    (так как за time_delta каждая задача выполнила некоторую работу)
+    resource_consumers = defaultdict(set)
+    for active_tool in active_tools:
+        for r in ResourceType:
+            if active_tool.remaining_work[r] > 0:
+                resource_consumers[r].add(active_tool.tool_id)
+    
+    for active_tool in active_tools:
+        for r in ResourceType:
+            if active_tool.remaining_work[r] > 0:
+                # Вычислить fair share для этого ресурса
+                num_consumers = len(resource_consumers[r])
+                share = resources[r].total_capacity / num_consumers
+                
+                # Выполненная работа за time_delta
+                work_done = share * time_delta
+                
+                # Обновить remaining_work (не может быть < 0)
+                active_tool.remaining_work[r] = max(0, active_tool.remaining_work[r] - work_done)
+    
+    # 2. Проверить, завершилась ли задача tool полностью
+    if all(tool.remaining_work[r] <= 1e-9 for r in ResourceType):  # epsilon для float
+        tool.status = ToolStatus.COMPLETED
+        tool.finish_time = current_time
+        active_tools.remove(tool)
         
-        finish_times[tool.tool_id] = max_time
-    
-    return finish_times
-```
+        # 3. Проверить зависимости и запустить dependent tasks
+        check_and_start_dependents(tool)
 
-**Сложность:** O(|ActiveTools| × |ResourceTypes|) на каждое событие  
-**Плюсы:** Точный учёт динамического перераспределения  
-**Минусы:** Может быть дорого при большом количестве одновременно активных инструментов
 
-**Вариант 2: Инкрементальный update (оптимизация)**
-
-Пересчитывать только инструменты, использующие те же ресурсы, что и завершённый/стартовавший.
-
-```python
-def incremental_update(event: Event, active_tools: Set[ToolInstance], 
-                       affected_resources: Set[ResourceType]) -> None:
+def check_and_start_dependents(finished_tool: ToolInstance) -> None:
     """
-    Обновляет только инструменты, затронутые изменением в affected_resources.
+    Проверяет, можно ли запустить задачи, зависящие от finished_tool,
+    и добавляет события TOOL_START в EventQueue.
     """
-    # Найти инструменты, использующие affected resources
-    affected_tools = {
-        tool for tool in active_tools 
-        if any(tool.get_load(r) > 0 for r in affected_resources)
-    }
-    
-    # Пересчитать finish_times только для них
-    # ...
-```
-
-**Критерий выбора:** Если средняя загрузка системы < 50%, используем Вариант 1 (простота важнее). При > 70% загрузке — Вариант 2.
-
-### 3.4 Обработка зависимостей (DAG Dependency Resolution)
-
-При завершении инструмента `T_finished`:
-
-```python
-def handle_tool_finish(tool_id: str, current_time: float) -> List[Event]:
-    """
-    Обрабатывает завершение инструмента и генерирует TOOL_START события
-    для готовых к запуску зависимых инструментов.
-    
-    Returns:
-        Список новых событий TOOL_START
-    """
-    finished_tool = tool_instances[tool_id]
-    finished_tool.status = ToolStatus.COMPLETED
-    finished_tool.finish_time = current_time
-    
     request = requests[finished_tool.request_id]
     dag = request.dag
-    
-    new_events = []
     
     # Найти всех dependents в DAG
     for dependent_name in dag.graph.successors(finished_tool.tool_name):
@@ -262,13 +432,13 @@ def handle_tool_finish(tool_id: str, current_time: float) -> List[Event]:
         )
         
         if all_deps_done and dependent_tool.status == ToolStatus.PENDING:
-            # Создать событие TOOL_START
+            # Добавить событие TOOL_START в очередь
             event = Event(
                 event_type=EventType.TOOL_START,
-                timestamp=current_time,  # старт немедленно
+                timestamp=current_time,  # старт немедленно (или можно добавить delay)
                 payload={'tool_id': dependent_tool.tool_id}
             )
-            new_events.append(event)
+            event_queue.push(event)
     
     # Проверить, завершён ли весь запрос
     if all(t.status == ToolStatus.COMPLETED for t in request.tool_instances.values()):
@@ -276,8 +446,6 @@ def handle_tool_finish(tool_id: str, current_time: float) -> List[Event]:
         # Записать метрику latency
         latency = request.finish_time - request.arrival_time
         metrics.record_request_latency(request.request_type, latency)
-    
-    return new_events
 ```
 
 ---
@@ -301,8 +469,7 @@ mksim/
 ├── simulator/
 │   ├── event.py                   # [NEW] Event, EventType, EventQueue
 │   ├── resource.py                # [NEW] Resource, ResourceManager
-│   ├── scheduler.py               # [NEW] Fair-share scheduler
-│   └── simulation_engine.py       # [NEW] Основной цикл симуляции
+│   └── simulation_engine.py       # [NEW] Основной цикл симуляции (включает fair-share logic)
 │
 ├── metrics/
 │   ├── collector.py               # [NEW] Сбор метрик (latency, throughput, utilization)
@@ -333,14 +500,14 @@ simulation_runner.py               # [NEW] Entry point для запуска с�
 
 ```python
 from heapq import heappush, heappop
-from typing import List, Dict, Set
+from typing import List, Dict, Set, Tuple, Optional
 from dataclasses import dataclass
 from enum import Enum
+from collections import defaultdict
 
 class EventType(Enum):
     REQUEST_ARRIVAL = 1
     TOOL_START = 2
-    TOOL_FINISH = 3
 
 @dataclass
 class Event:
@@ -354,20 +521,21 @@ class Event:
 class SimulationEngine:
     """
     Дискретно-событийный симулятор с fair-share resource allocation.
+    
+    Основная идея: в EventQueue хранятся только события старта (REQUEST_ARRIVAL, TOOL_START).
+    Время завершения задач вычисляется динамически на каждом шаге.
     """
     
     def __init__(self, 
                  resource_manager: ResourceManager,
-                 scheduler: FairShareScheduler,
                  metrics_collector: MetricsCollector):
-        self.event_queue: List[Event] = []  # heapq
+        self.event_queue: List[Event] = []  # heapq для стартов
         self.current_time: float = 0.0
         self.resource_manager = resource_manager
-        self.scheduler = scheduler
         self.metrics = metrics_collector
         
         self.requests: Dict[UUID, Request] = {}
-        self.active_tools: Dict[str, ToolInstance] = {}
+        self.active_tools: Set[ToolInstance] = set()
         
     def schedule_event(self, event: Event) -> None:
         """Добавляет событие в очередь."""
@@ -380,22 +548,95 @@ class SimulationEngine:
         Args:
             until: время окончания симуляции (секунды)
         """
-        while self.event_queue and self.event_queue[0].timestamp <= until:
-            event = heappop(self.event_queue)
-            self.current_time = event.timestamp
+        while True:
+            # 1. Найти ближайший старт из EventQueue
+            next_start_time = self.event_queue[0].timestamp if self.event_queue else float('inf')
             
-            # Dispatch по типу события
-            if event.event_type == EventType.REQUEST_ARRIVAL:
-                self._handle_request_arrival(event)
-            elif event.event_type == EventType.TOOL_START:
-                self._handle_tool_start(event)
-            elif event.event_type == EventType.TOOL_FINISH:
-                self._handle_tool_finish(event)
+            # Проверка на окончание симуляции
+            if next_start_time > until and not self.active_tools:
+                break
             
-            # После каждого события обновляем метрики
+            # 2. Найти ближайшее завершение среди активных задач
+            next_completion_time, completing_tool, completing_resource = self._find_next_completion()
+            
+            # 3. Определить следующий момент времени
+            next_time = min(next_start_time, next_completion_time)
+            
+            if next_time == float('inf'):
+                # Нет больше событий
+                break
+            
+            if next_time > until:
+                # Симуляция завершена
+                break
+            
+            # 4. Обработать событие
+            if next_time == next_start_time:
+                # Событие старта
+                event = heappop(self.event_queue)
+                self.current_time = event.timestamp
+                
+                if event.event_type == EventType.REQUEST_ARRIVAL:
+                    self._handle_request_arrival(event)
+                elif event.event_type == EventType.TOOL_START:
+                    self._handle_tool_start(event)
+            else:
+                # Завершение работы по ресурсу
+                time_delta = next_completion_time - self.current_time
+                self.current_time = next_completion_time
+                self._handle_resource_completion(completing_tool, completing_resource, time_delta)
+            
+            # После каждого шага обновляем метрики
             self.metrics.snapshot(self.current_time, 
                                   self.active_tools, 
                                   self.resource_manager)
+    
+    def _find_next_completion(self) -> Tuple[float, Optional[ToolInstance], Optional[ResourceType]]:
+        """
+        Находит ближайший момент завершения работы по любому ресурсу для любой активной задачи.
+        
+        Returns:
+            (completion_time, tool, resource_type) или (inf, None, None) если нет активных задач
+        """
+        if not self.active_tools:
+            return float('inf'), None, None
+        
+        min_completion_time = float('inf')
+        completing_tool = None
+        completing_resource = None
+        
+        # Подсчитать количество потребителей для каждого ресурса (для fair-share)
+        resource_consumers = defaultdict(set)
+        for tool in self.active_tools:
+            for resource_type in ResourceType:
+                if tool.remaining_work[resource_type] > 1e-9:  # epsilon
+                    resource_consumers[resource_type].add(tool.tool_id)
+        
+        # Для каждой задачи и каждого ресурса вычислить время завершения
+        for tool in self.active_tools:
+            for resource_type in ResourceType:
+                remaining = tool.remaining_work[resource_type]
+                
+                if remaining <= 1e-9:  # epsilon для float сравнения
+                    continue
+                
+                # Fair share для этого ресурса
+                num_consumers = len(resource_consumers[resource_type])
+                if num_consumers == 0:
+                    continue
+                    
+                capacity = self.resource_manager.get_capacity(resource_type)
+                share = capacity / num_consumers
+                
+                # Время завершения работы по этому ресурсу
+                completion_time = self.current_time + (remaining / share)
+                
+                if completion_time < min_completion_time:
+                    min_completion_time = completion_time
+                    completing_tool = tool
+                    completing_resource = resource_type
+        
+        return min_completion_time, completing_tool, completing_resource
     
     def _handle_request_arrival(self, event: Event) -> None:
         """Обработка поступления нового запроса."""
@@ -420,64 +661,91 @@ class SimulationEngine:
     def _handle_tool_start(self, event: Event) -> None:
         """Обработка начала выполнения инструмента."""
         tool_id = event.payload['tool_id']
-        tool = self.active_tools[tool_id]
+        # Найти tool instance по ID (из requests)
+        tool = self._find_tool_by_id(tool_id)
+        
         tool.status = ToolStatus.RUNNING
         tool.start_time = self.current_time
         
-        # Allocate resources
-        self.resource_manager.allocate(tool)
+        # Добавить в активные задачи
+        self.active_tools.add(tool)
         
-        # Пересчитать finish times для всех active tools
-        finish_times = self.scheduler.recalculate_finish_times(
-            self.current_time, self.active_tools.values()
-        )
-        
-        # Обновить/создать события TOOL_FINISH
-        for tid, finish_time in finish_times.items():
-            # Удалить старое событие TOOL_FINISH (если было)
-            self._remove_tool_finish_event(tid)
-            
-            # Добавить новое
-            finish_event = Event(
-                timestamp=finish_time,
-                event_type=EventType.TOOL_FINISH,
-                payload={'tool_id': tid}
-            )
-            self.schedule_event(finish_event)
+        # Инициализировать remaining_work
+        for resource_type in ResourceType:
+            tool.remaining_work[resource_type] = tool.get_load(resource_type)
     
-    def _handle_tool_finish(self, event: Event) -> None:
-        """Обработка завершения выполнения инструмента."""
-        tool_id = event.payload['tool_id']
-        tool = self.active_tools[tool_id]
-        tool.status = ToolStatus.COMPLETED
-        tool.finish_time = self.current_time
+    def _handle_resource_completion(self, tool: ToolInstance, resource: ResourceType, time_delta: float) -> None:
+        """
+        Обрабатывает завершение работы по одному ресурсу для одной задачи.
         
-        # Release resources
-        self.resource_manager.release(tool)
+        Args:
+            tool: задача, которая завершила работу по ресурсу
+            resource: ресурс, по которому завершена работа
+            time_delta: прошедшее время с предыдущего шага
+        """
+        # 1. Обновить remaining_work для ВСЕХ активных задач
+        resource_consumers = defaultdict(set)
+        for active_tool in self.active_tools:
+            for r in ResourceType:
+                if active_tool.remaining_work[r] > 1e-9:
+                    resource_consumers[r].add(active_tool.tool_id)
         
-        # Удалить из active
-        del self.active_tools[tool_id]
+        for active_tool in self.active_tools:
+            for r in ResourceType:
+                if active_tool.remaining_work[r] > 1e-9:
+                    # Вычислить fair share для этого ресурса
+                    num_consumers = len(resource_consumers[r])
+                    capacity = self.resource_manager.get_capacity(r)
+                    share = capacity / num_consumers
+                    
+                    # Выполненная работа за time_delta
+                    work_done = share * time_delta
+                    
+                    # Обновить remaining_work
+                    active_tool.remaining_work[r] = max(0, active_tool.remaining_work[r] - work_done)
         
-        # Найти и запустить dependent tools (см. handle_tool_finish из раздела 3.4)
-        new_start_events = self._check_and_start_dependents(tool)
-        for evt in new_start_events:
-            self.schedule_event(evt)
+        # 2. Проверить, завершилась ли задача tool полностью
+        if all(tool.remaining_work[r] <= 1e-9 for r in ResourceType):
+            tool.status = ToolStatus.COMPLETED
+            tool.finish_time = self.current_time
+            self.active_tools.remove(tool)
+            
+            # 3. Проверить зависимости и запустить dependent tasks
+            self._check_and_start_dependents(tool)
+    
+    def _check_and_start_dependents(self, finished_tool: ToolInstance) -> None:
+        """
+        Проверяет, можно ли запустить задачи, зависящие от finished_tool,
+        и добавляет события TOOL_START в EventQueue.
+        """
+        request = self.requests[finished_tool.request_id]
+        dag = request.dag
         
-        # Пересчитать finish times для оставшихся active tools
-        if self.active_tools:
-            finish_times = self.scheduler.recalculate_finish_times(
-                self.current_time, self.active_tools.values()
+        # Найти всех dependents в DAG
+        for dependent_name in dag.graph.successors(finished_tool.tool_name):
+            dependent_tool = request.tool_instances[dependent_name]
+            
+            # Проверить, все ли dependencies завершены
+            all_deps_done = all(
+                request.tool_instances[dep_name].status == ToolStatus.COMPLETED
+                for dep_name in dag.graph.predecessors(dependent_name)
             )
             
-            # Обновить события
-            for tid, finish_time in finish_times.items():
-                self._remove_tool_finish_event(tid)
-                finish_event = Event(
-                    timestamp=finish_time,
-                    event_type=EventType.TOOL_FINISH,
-                    payload={'tool_id': tid}
+            if all_deps_done and dependent_tool.status == ToolStatus.PENDING:
+                # Добавить событие TOOL_START в очередь
+                event = Event(
+                    event_type=EventType.TOOL_START,
+                    timestamp=self.current_time,
+                    payload={'tool_id': dependent_tool.tool_id}
                 )
-                self.schedule_event(finish_event)
+                self.schedule_event(event)
+        
+        # Проверить, завершён ли весь запрос
+        if all(t.status == ToolStatus.COMPLETED for t in request.tool_instances.values()):
+            request.finish_time = self.current_time
+            # Записать метрику latency
+            latency = request.finish_time - request.arrival_time
+            self.metrics.record_request_latency(request.request_type, latency)
 ```
 
 ---
@@ -702,13 +970,18 @@ workload:
 1. **EventQueue correctness:**
    - События извлекаются в порядке возрастания timestamp
    - События с одинаковым timestamp — в порядке priority
+   - Только события START хранятся в очереди
 
-2. **FairShareScheduler:**
+2. **Find next completion logic:**
    - Один инструмент на одном ресурсе → получает 100% capacity
-   - Два идентичных инструмента → по 50% каждый
-   - Bottleneck resource определяет finish time
+   - Два идентичных инструмента на одном ресурсе → по 50% каждый
+   - Корректное определение ближайшего завершения среди N задач и M ресурсов
 
-3. **DAG dependency resolution:**
+3. **Remaining work updates:**
+   - После time_delta все активные задачи обновляют remaining_work корректно
+   - Fair-share распределение соблюдается (каждая задача получает capacity/N)
+
+4. **DAG dependency resolution:**
    - Tool не стартует, пока все dependencies не завершены
    - Завершение всех инструментов в DAG → запрос completed
 
@@ -759,27 +1032,32 @@ E[Latency] = 1 / (μ - λ)  (при λ < μ)
 
 | Компонент | Базовая реализация | Оптимизация | Trade-off |
 |-----------|---------------------|-------------|-----------|
-| Event Queue | Python heapq | heapq (достаточно) | heapq — O(log n), для > 1M событий можно calendar queue |
-| Active Tools tracking | Dict | Dict (достаточно) | O(1) lookup, memory overhead незначительный |
-| Recalculate finish times | Full recalc каждый event | Incremental update | Сложность реализации vs 2-3x speedup при высокой загрузке |
+| Event Queue | Python heapq (только старты) | heapq (достаточно) | heapq — O(log n), для > 1M событий можно calendar queue |
+| Active Tools tracking | Set | Set (достаточно) | O(1) add/remove, memory overhead незначительный |
+| Find next completion | O(N_tools × N_resources) | Кеширование resource_consumers | Для > 1000 одновременно активных задач |
 | Resource allocation | Per-tool calculation | Vectorized (NumPy) | Для > 10K одновременно активных инструментов |
+| Remaining work update | Полный пересчёт всех задач | Только задачи с affected resources | Сложность vs 2x speedup |
 
-**Рекомендация:** Начать с простой реализации (heapq + dict + full recalc). Оптимизировать только если профайлинг покажет bottleneck.
+**Рекомендация:** Начать с простой реализации (heapq + set + naive loops). Оптимизировать только если профайлинг покажет bottleneck.
+
+**Ключевое преимущество текущего подхода:** 
+- EventQueue содержит только старты (обычно << количества завершений)
+- Не нужно удалять/перепланировать события завершений при изменении resource sharing
+- Явный контроль времени на каждом шаге
 
 ### 8.2 Точность vs Speed
 
-**Вариант 1: Точная симуляция**
-- Пересчёт finish times на каждое событие
-- Учёт всех зависимостей в DAG
-- Плюсы: максимальная точность
-- Минусы: медленно для длинных симуляций (> 1 млн событий)
+**Наш подход обеспечивает 100% точность**, так как:
+1. На каждом шаге вычисляем точное время следующего завершения с учётом текущего fair-share
+2. Обновляем `remaining_work` для всех активных задач пропорционально прошедшему времени
+3. Никакой аппроксимации или дискретизации времени
 
-**Вариант 2: Аппроксимация**
-- Пересчёт только при "значительных" изменениях (например, изменение загрузки > 10%)
-- Плюсы: 5-10x быстрее
-- Минусы: потеря точности до 5-10% в latency
+**Возможная оптимизация (с потерей точности):**
+- **Time quantum discretization:** Продвигать время шагами по 1ms вместо точных моментов
+- Плюсы: Упрощение логики, меньше вычислений на шаг
+- Минусы: Потеря точности до 1ms × N_steps, может быть значительно
 
-**Критерий выбора:** Для design space exploration (множество сценариев) — Вариант 2. Для финальной валидации — Вариант 1.
+**Рекомендация:** Использовать точную симуляцию (continuous time). Дискретизация оправдана только для очень больших систем (> 10K одновременно активных задач).
 
 ### 8.3 Memory footprint
 
@@ -834,26 +1112,28 @@ class StreamingMetricsCollector:
 ---
 
 ### Phase 2: Resource Management (2-3 дня)
-**Цель:** Добавить fair-share распределение ресурсов.
+**Цель:** Добавить fair-share распределение ресурсов и логику определения следующего завершения.
 
 Задачи:
 1. ✅ Создать `Resource`, `ResourceManager`:
-   - Tracking активных consumers для каждого ресурса
-   - Методы `allocate()`, `release()`
+   - Tracking capacity для каждого ресурса
+   - Методы `get_capacity(resource_type)`
 
-2. ✅ Реализовать `FairShareScheduler`:
-   - `recalculate_finish_times()` с учётом fair share
-   - Определение bottleneck resource
+2. ✅ Реализовать в `SimulationEngine`:
+   - `_find_next_completion()` — находит ближайшее завершение среди активных задач
+   - `_handle_resource_completion()` — обновляет remaining_work для всех задач
+   - Fair-share распределение (capacity / num_consumers)
 
-3. ✅ Интегрировать в `SimulationEngine`:
-   - При TOOL_START: allocate + recalc
-   - При TOOL_FINISH: release + recalc
+3. ✅ Добавить `remaining_work` в `ToolInstance`:
+   - Dict[ResourceType, float] — оставшаяся работа по каждому ресурсу
+   - Инициализация при старте задачи
 
 4. ✅ Unit тесты:
    - 2 инструмента на одном ресурсе → по 50% capacity
-   - Bottleneck resource определяет finish time
+   - Корректное определение ближайшего завершения
+   - Обновление remaining_work пропорционально time_delta
 
-**Критерий готовности:** Два одновременно запущенных инструмента корректно делят ресурсы 50/50, и их finish times вычисляются правильно.
+**Критерий готовности:** Два одновременно запущенных инструмента корректно делят ресурсы 50/50, симуляция продвигается в точные моменты завершения.
 
 ---
 
@@ -918,11 +1198,12 @@ class StreamingMetricsCollector:
 **Цель:** Повысить производительность и надёжность.
 
 Задачи:
-1. ⚡ Incremental update для finish times (вместо full recalc)
-2. ⚡ Streaming metrics (удаление completed requests)
-3. ⚡ Профилирование и оптимизация bottlenecks
-4. 📊 Логирование и debugging tools
-5. 📊 Export результатов в JSON/CSV для дальнейшего анализа
+1. ⚡ Кеширование resource_consumers между шагами (если набор активных задач не изменился)
+2. ⚡ Streaming metrics (удаление completed requests после записи)
+3. ⚡ Профилирование и оптимизация bottlenecks (cProfile, line_profiler)
+4. ⚡ Vectorized операции через NumPy для update remaining_work (при > 1K активных задач)
+5. 📊 Логирование и debugging tools (детальная трассировка событий)
+6. 📊 Export результатов в JSON/CSV для дальнейшего анализа
 
 ---
 
@@ -984,11 +1265,16 @@ class StreamingMetricsCollector:
 
 1. **Event-driven simulation с fair-share:** Оптимальный баланс точности и производительности для данной задачи.
 
-2. **Poisson arrivals:** Стандартная модель для моделирования запросов, обеспечивает статистическую обоснованность.
+2. **Только события START в очереди:** Ключевое архитектурное решение, которое:
+   - Упрощает логику (не нужно удалять/перепланировать FINISH события)
+   - Обеспечивает 100% точность (всегда используем актуальное состояние системы)
+   - Снижает количество событий в очереди (обычно старты << завершения)
 
-3. **Полный пересчёт finish times:** Простота реализации и отладки важнее для первой версии.
+3. **Динамическое вычисление next completion:** На каждом шаге вычисляем момент следующего завершения с учётом текущего fair-share распределения.
 
-4. **Binary search для обратной задачи:** Эффективный способ найти max throughput при SLA.
+4. **Poisson arrivals:** Стандартная модель для моделирования запросов, обеспечивает статистическую обоснованность.
+
+5. **Binary search для обратной задачи:** Эффективный способ найти max throughput при SLA.
 
 ### 11.2 Критерии успеха
 

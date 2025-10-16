@@ -1,0 +1,385 @@
+{
+  "resources": [
+    {
+      "type": "cpu",
+      "timeline": [
+        {
+          "start": 0.0,
+          "end": 1e-05,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_start": 100.0
+          }
+        },
+        {
+          "start": 1e-05,
+          "end": 1e-05,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 1e-05,
+          "end": 1e-05,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_extract_text": 100.0
+          }
+        },
+        {
+          "start": 1e-05,
+          "end": 0.80001,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_extract_text": 50.0,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_fetch_data": 50.0
+          }
+        },
+        {
+          "start": 0.80001,
+          "end": 0.90001,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_extract_text": 100.0
+          }
+        },
+        {
+          "start": 0.90001,
+          "end": 0.90001,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 0.90001,
+          "end": 1.0,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 100.0
+          }
+        },
+        {
+          "start": 1.0,
+          "end": 1.00002,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 50.0,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_start": 50.0
+          }
+        },
+        {
+          "start": 1.00002,
+          "end": 1.00002,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 100.0
+          }
+        },
+        {
+          "start": 1.00002,
+          "end": 1.00002,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 50.0,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 50.0
+          }
+        },
+        {
+          "start": 1.00002,
+          "end": 2.0,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_fetch_data": 33.333333333333336,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 33.333333333333336,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 33.333333333333336
+          }
+        },
+        {
+          "start": 2.0,
+          "end": 2.00004,
+          "total": 100.0,
+          "allocations": {
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_start": 25.0,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_fetch_data": 25.0,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 25.0,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 25.0
+          }
+        },
+        {
+          "start": 2.00004,
+          "end": 2.00004,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_fetch_data": 33.333333333333336,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 33.333333333333336,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 33.333333333333336
+          }
+        },
+        {
+          "start": 2.00004,
+          "end": 2.00004,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_fetch_data": 25.0,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 25.0,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 25.0,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 25.0
+          }
+        },
+        {
+          "start": 2.00004,
+          "end": 3.4999900000000004,
+          "total": 100.0,
+          "allocations": {
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_fetch_data": 20.0,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_fetch_data": 20.0,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 20.0,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 20.0,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 20.0
+          }
+        },
+        {
+          "start": 3.4999900000000004,
+          "end": 3.89999,
+          "total": 100.0,
+          "allocations": {
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_fetch_data": 25.0,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 25.0,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 25.0,
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 25.0
+          }
+        },
+        {
+          "start": 3.89999,
+          "end": 3.89999,
+          "total": 100.0,
+          "allocations": {
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_fetch_data": 33.333333333333336,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 33.333333333333336,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 33.333333333333336
+          }
+        },
+        {
+          "start": 3.89999,
+          "end": 3.9000299999999997,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_process_results": 25.0,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_fetch_data": 25.0,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 25.0,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 25.0
+          }
+        },
+        {
+          "start": 3.9000299999999997,
+          "end": 4.1999699999999995,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_process_results": 33.333333333333336,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 33.333333333333336,
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_process_results": 33.333333333333336
+          }
+        },
+        {
+          "start": 4.1999699999999995,
+          "end": 4.20001,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_process_results": 50.0,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 50.0
+          }
+        },
+        {
+          "start": 4.20001,
+          "end": 4.20001,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_process_results": 100.0
+          }
+        },
+        {
+          "start": 4.20001,
+          "end": 5.19999,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_process_results": 50.0,
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_process_results": 50.0
+          }
+        },
+        {
+          "start": 5.19999,
+          "end": 5.3,
+          "total": 100.0,
+          "allocations": {
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_process_results": 100.0
+          }
+        },
+        {
+          "start": 5.3,
+          "end": 5.3,
+          "total": 0.0,
+          "allocations": {}
+        }
+      ]
+    },
+    {
+      "type": "npu",
+      "timeline": []
+    },
+    {
+      "type": "memory",
+      "timeline": []
+    },
+    {
+      "type": "network",
+      "timeline": [
+        {
+          "start": 1e-05,
+          "end": 1e-05,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_extract_text": 100.0
+          }
+        },
+        {
+          "start": 1e-05,
+          "end": 0.80001,
+          "total": 100.0,
+          "allocations": {
+            "b5d733b6-aed2-48d3-85a9-9b45389e6936_extract_text": 100.0
+          }
+        },
+        {
+          "start": 0.80001,
+          "end": 0.90001,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 0.90001,
+          "end": 0.90001,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 0.90001,
+          "end": 1.0,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 1.0,
+          "end": 1.00002,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 1.00002,
+          "end": 1.00002,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 1.00002,
+          "end": 1.00002,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 100.0
+          }
+        },
+        {
+          "start": 1.00002,
+          "end": 2.0,
+          "total": 100.0,
+          "allocations": {
+            "57e6c9b2-38f5-4d11-9551-f50d721f7660_extract_text": 100.0
+          }
+        },
+        {
+          "start": 2.0,
+          "end": 2.00004,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 2.00004,
+          "end": 2.00004,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 2.00004,
+          "end": 2.00004,
+          "total": 100.0,
+          "allocations": {
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 100.0
+          }
+        },
+        {
+          "start": 2.00004,
+          "end": 3.4999900000000004,
+          "total": 100.0,
+          "allocations": {
+            "d5bd1d3d-3de7-4fa7-b6f5-3ac0654f1acb_extract_text": 100.0
+          }
+        },
+        {
+          "start": 3.4999900000000004,
+          "end": 3.89999,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 3.89999,
+          "end": 3.89999,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 3.89999,
+          "end": 3.9000299999999997,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 3.9000299999999997,
+          "end": 4.1999699999999995,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 4.1999699999999995,
+          "end": 4.20001,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 4.20001,
+          "end": 4.20001,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 4.20001,
+          "end": 5.19999,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 5.19999,
+          "end": 5.3,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 5.3,
+          "end": 5.3,
+          "total": 0.0,
+          "allocations": {}
+        }
+      ]
+    },
+    {
+      "type": "disk",
+      "timeline": []
+    }
+  ]
+}

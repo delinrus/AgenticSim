@@ -36,6 +36,11 @@ class MetricsCollector:
         # Active tools count over time
         self.active_tools_snapshots: List[Dict] = []
         
+        # Resource allocation timeline (for visualization)
+        # Stores intervals with resource distribution across tools
+        self.resource_timeline: Dict[ResourceType, List[Dict]] = defaultdict(list)
+        self._current_allocation_start: Optional[float] = None
+        
         # Simulation start/end times
         self.simulation_start_time: Optional[float] = None
         self.simulation_end_time: Optional[float] = None
@@ -297,4 +302,118 @@ class MetricsCollector:
             print(f"  {resource.upper():10s}: {util*100:.1f}%")
         
         print("\n" + "="*80)
+    
+    def record_resource_allocation(self, 
+                                   current_time: float, 
+                                   active_tools: Set[ToolInstance]) -> None:
+        """
+        Record current resource allocation state for timeline visualization.
+        
+        Should be called whenever resource allocation changes (tools start/finish).
+        Creates timeline intervals showing which tools are using which resources.
+        
+        Args:
+            current_time: Current simulation time
+            active_tools: Set of currently active tools
+        """
+        # Close previous intervals if they exist
+        if self._current_allocation_start is not None:
+            self._close_allocation_intervals(current_time)
+        
+        # Start new intervals for each resource
+        for resource_type in ResourceType:
+            # Collect tools using this resource and their allocations
+            allocations = {}
+            total_allocated = 0.0
+            
+            for tool in active_tools:
+                if tool.has_work_on_resource(resource_type):
+                    share = tool.current_share[resource_type]
+                    if share > 0:
+                        # Use tool_id for unique identification
+                        allocations[tool.tool_id] = share
+                        total_allocated += share
+            
+            # Record interval start (will be closed when allocation changes)
+            if allocations or self.resource_timeline[resource_type]:
+                # Store current allocation (to be closed later)
+                self.resource_timeline[resource_type].append({
+                    'start': current_time,
+                    'end': None,  # Will be filled when interval closes
+                    'total': total_allocated,
+                    'allocations': allocations.copy()
+                })
+        
+        self._current_allocation_start = current_time
+    
+    def _close_allocation_intervals(self, end_time: float) -> None:
+        """
+        Close all open allocation intervals.
+        
+        Args:
+            end_time: Time when intervals should end
+        """
+        for resource_type in ResourceType:
+            timeline = self.resource_timeline[resource_type]
+            if timeline and timeline[-1]['end'] is None:
+                timeline[-1]['end'] = end_time
+    
+    def finalize_timeline(self, end_time: float) -> None:
+        """
+        Finalize timeline by closing any open intervals.
+        
+        Should be called when simulation ends.
+        
+        Args:
+            end_time: Simulation end time
+        """
+        if self._current_allocation_start is not None:
+            self._close_allocation_intervals(end_time)
+    
+    def export_resource_timeline(self) -> Dict:
+        """
+        Export resource allocation timeline in format suitable for visualization.
+        
+        Returns:
+            Dictionary with resource timelines:
+            {
+                "resources": [
+                    {
+                        "type": "cpu",
+                        "timeline": [
+                            {
+                                "start": 0.0,
+                                "end": 1.5,
+                                "total": 100.0,
+                                "allocations": {
+                                    "req1_tool_a": 50.0,
+                                    "req2_tool_b": 50.0
+                                }
+                            },
+                            ...
+                        ]
+                    },
+                    ...
+                ]
+            }
+        """
+        resources_data = []
+        
+        for resource_type in ResourceType:
+            timeline = self.resource_timeline[resource_type]
+            
+            # Filter out intervals with no end time (shouldn't happen if finalized)
+            valid_intervals = [
+                interval for interval in timeline 
+                if interval['end'] is not None
+            ]
+            
+            resources_data.append({
+                'type': resource_type.value,
+                'timeline': valid_intervals
+            })
+        
+        return {
+            'resources': resources_data
+        }
 

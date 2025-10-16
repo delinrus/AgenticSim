@@ -1,0 +1,6421 @@
+{
+  "resources": [
+    {
+      "type": "cpu",
+      "timeline": [
+        {
+          "start": 0.9385361799537182,
+          "end": 1.0385361799537183,
+          "total": 100.0,
+          "allocations": {
+            "e9cb8689-715d-465e-98ba-85dfec9d2f99_query_planning": 100.0
+          }
+        },
+        {
+          "start": 1.0385361799537183,
+          "end": 1.0385361799537183,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 1.0385361799537183,
+          "end": 1.5385361799537183,
+          "total": 100.0,
+          "allocations": {
+            "e9cb8689-715d-465e-98ba-85dfec9d2f99_web_search": 100.0
+          }
+        },
+        {
+          "start": 1.5385361799537183,
+          "end": 1.5385361799537183,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 1.5385361799537183,
+          "end": 1.7385361799537182,
+          "total": 100.0,
+          "allocations": {
+            "e9cb8689-715d-465e-98ba-85dfec9d2f99_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 1.7385361799537182,
+          "end": 6.958779041788761,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 6.958779041788761,
+          "end": 7.05877904178876,
+          "total": 100.0,
+          "allocations": {
+            "08b4a3f9-5e6b-43ab-9648-80a0c552298c_query_planning": 100.0
+          }
+        },
+        {
+          "start": 7.05877904178876,
+          "end": 7.05877904178876,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 7.05877904178876,
+          "end": 7.55877904178876,
+          "total": 100.0,
+          "allocations": {
+            "08b4a3f9-5e6b-43ab-9648-80a0c552298c_web_search": 100.0
+          }
+        },
+        {
+          "start": 7.55877904178876,
+          "end": 7.55877904178876,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 7.55877904178876,
+          "end": 7.7587790417887605,
+          "total": 100.0,
+          "allocations": {
+            "08b4a3f9-5e6b-43ab-9648-80a0c552298c_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 7.7587790417887605,
+          "end": 9.59227042887966,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 9.59227042887966,
+          "end": 9.69227042887966,
+          "total": 100.0,
+          "allocations": {
+            "ddc43ad2-13a8-4bba-a118-a74589b99926_query_planning": 100.0
+          }
+        },
+        {
+          "start": 9.69227042887966,
+          "end": 9.69227042887966,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 9.69227042887966,
+          "end": 9.91398943687726,
+          "total": 100.0,
+          "allocations": {
+            "ddc43ad2-13a8-4bba-a118-a74589b99926_web_search": 100.0
+          }
+        },
+        {
+          "start": 9.91398943687726,
+          "end": 10.06398943687726,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_research_planning": 100.0
+          }
+        },
+        {
+          "start": 10.06398943687726,
+          "end": 10.06398943687726,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 10.06398943687726,
+          "end": 10.06398943687726,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 10.06398943687726,
+          "end": 10.663989436877259,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_data_analysis": 50.0,
+            "6efcc435-b990-4807-a69b-fa50c16515b9_literature_search": 50.0
+          }
+        },
+        {
+          "start": 10.663989436877259,
+          "end": 10.663989436877259,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 10.663989436877259,
+          "end": 11.063989436877259,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_data_analysis": 50.0,
+            "ddc43ad2-13a8-4bba-a118-a74589b99926_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 11.063989436877259,
+          "end": 11.36398943687726,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 11.36398943687726,
+          "end": 11.36398943687726,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.36398943687726,
+          "end": 11.418155536431566,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 100.0
+          }
+        },
+        {
+          "start": 11.418155536431566,
+          "end": 11.618155536431566,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 50.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_query_planning": 50.0
+          }
+        },
+        {
+          "start": 11.618155536431566,
+          "end": 11.618155536431566,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 100.0
+          }
+        },
+        {
+          "start": 11.618155536431566,
+          "end": 11.75740527735626,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_web_search": 50.0,
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 50.0
+          }
+        },
+        {
+          "start": 11.75740527735626,
+          "end": 11.957405277356258,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 50.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_query_planning": 50.0
+          }
+        },
+        {
+          "start": 11.957405277356258,
+          "end": 11.957405277356258,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 100.0
+          }
+        },
+        {
+          "start": 11.957405277356258,
+          "end": 12.09371659668981,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 50.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 50.0
+          }
+        },
+        {
+          "start": 12.09371659668981,
+          "end": 12.096597861185469,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 50.0
+          }
+        },
+        {
+          "start": 12.096597861185469,
+          "end": 12.21627539840283,
+          "total": 100.0,
+          "allocations": {
+            "3c03f274-3ce5-420e-be10-43889430edec_query_planning": 33.333333333333336,
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 33.333333333333336,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 33.333333333333336
+          }
+        },
+        {
+          "start": 12.21627539840283,
+          "end": 12.516275398402833,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_query_planning": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_query_planning": 25.0,
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 25.0
+          }
+        },
+        {
+          "start": 12.516275398402833,
+          "end": 12.516275398402833,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_query_planning": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_query_planning": 25.0,
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 25.0
+          }
+        },
+        {
+          "start": 12.516275398402833,
+          "end": 12.64127539840283,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 20.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_query_planning": 20.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_query_planning": 20.0,
+            "6efcc435-b990-4807-a69b-fa50c16515b9_synthesis": 20.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 20.0
+          }
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.64127539840283,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 50.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.64127539840283,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 33.333333333333336,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 33.333333333333336,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 33.333333333333336
+          }
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.710380486704846,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 25.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 25.0
+          }
+        },
+        {
+          "start": 12.710380486704846,
+          "end": 12.960380486704846,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_research_planning": 20.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 20.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 20.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 20.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_research_planning": 20.0
+          }
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 12.960380486704846,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 50.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_research_planning": 50.0
+          }
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 12.960380486704846,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 33.333333333333336,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 33.333333333333336,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_research_planning": 33.333333333333336
+          }
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 13.327047153371522,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 25.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 25.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 25.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_research_planning": 25.0
+          }
+        },
+        {
+          "start": 13.327047153371522,
+          "end": 13.327047153371522,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 25.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 25.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 25.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_research_planning": 25.0
+          }
+        },
+        {
+          "start": 13.327047153371522,
+          "end": 13.368713820038177,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 20.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 20.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_result_ranking": 20.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 20.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_research_planning": 20.0
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.368713820038177,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 33.333333333333336,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_result_ranking": 33.333333333333336,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 33.333333333333336
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.368713820038177,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 25.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 25.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_result_ranking": 25.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 25.0
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.493713820038181,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 20.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 20.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 20.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_result_ranking": 20.0,
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_result_ranking": 20.0
+          }
+        },
+        {
+          "start": 13.493713820038181,
+          "end": 14.160380486704854,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 25.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 25.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 25.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_result_ranking": 25.0
+          }
+        },
+        {
+          "start": 14.160380486704854,
+          "end": 14.613158264482628,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 50.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 14.613158264482628,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 50.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 14.613158264482628,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 33.333333333333336,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 33.333333333333336,
+            "3c03f274-3ce5-420e-be10-43889430edec_result_ranking": 33.333333333333336
+          }
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 15.413158264482629,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 25.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_result_ranking": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_result_ranking": 25.0
+          }
+        },
+        {
+          "start": 15.413158264482629,
+          "end": 15.577047153371517,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 50.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 15.577047153371517,
+          "end": 15.677047153371516,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 15.677047153371516,
+          "end": 15.779824931149294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.779824931149294,
+          "end": 15.779824931149294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.779824931149294,
+          "end": 15.885380486704848,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_synthesis": 100.0
+          }
+        },
+        {
+          "start": 15.885380486704848,
+          "end": 15.885380486704848,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_synthesis": 100.0
+          }
+        },
+        {
+          "start": 15.885380486704848,
+          "end": 16.23873712736271,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_synthesis": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_synthesis": 50.0
+          }
+        },
+        {
+          "start": 16.23873712736271,
+          "end": 16.53873712736271,
+          "total": 100.0,
+          "allocations": {
+            "7a8d8d55-0b16-440e-9fe3-c50315cf5710_query_planning": 33.333333333333336,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_synthesis": 33.333333333333336,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_synthesis": 33.333333333333336
+          }
+        },
+        {
+          "start": 16.53873712736271,
+          "end": 16.53873712736271,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_synthesis": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_synthesis": 50.0
+          }
+        },
+        {
+          "start": 16.53873712736271,
+          "end": 17.03873712736271,
+          "total": 100.0,
+          "allocations": {
+            "7a8d8d55-0b16-440e-9fe3-c50315cf5710_web_search": 33.333333333333336,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_synthesis": 33.333333333333336,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_synthesis": 33.333333333333336
+          }
+        },
+        {
+          "start": 17.03873712736271,
+          "end": 17.03873712736271,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_synthesis": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_synthesis": 50.0
+          }
+        },
+        {
+          "start": 17.03873712736271,
+          "end": 17.122070460696047,
+          "total": 100.0,
+          "allocations": {
+            "7a8d8d55-0b16-440e-9fe3-c50315cf5710_result_ranking": 33.333333333333336,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_synthesis": 33.333333333333336,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_synthesis": 33.333333333333336
+          }
+        },
+        {
+          "start": 17.122070460696047,
+          "end": 17.333181571807156,
+          "total": 100.0,
+          "allocations": {
+            "7a8d8d55-0b16-440e-9fe3-c50315cf5710_result_ranking": 50.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_synthesis": 50.0
+          }
+        },
+        {
+          "start": 17.333181571807156,
+          "end": 17.399848238473822,
+          "total": 100.0,
+          "allocations": {
+            "7a8d8d55-0b16-440e-9fe3-c50315cf5710_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 17.399848238473822,
+          "end": 18.07690143461724,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.07690143461724,
+          "end": 18.176901434617243,
+          "total": 100.0,
+          "allocations": {
+            "9dd08652-d2ae-42c6-820c-a5301924fff7_query_planning": 100.0
+          }
+        },
+        {
+          "start": 18.176901434617243,
+          "end": 18.176901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.176901434617243,
+          "end": 18.676901434617243,
+          "total": 100.0,
+          "allocations": {
+            "9dd08652-d2ae-42c6-820c-a5301924fff7_web_search": 100.0
+          }
+        },
+        {
+          "start": 18.676901434617243,
+          "end": 18.676901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.676901434617243,
+          "end": 18.876901434617242,
+          "total": 100.0,
+          "allocations": {
+            "9dd08652-d2ae-42c6-820c-a5301924fff7_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 18.876901434617242,
+          "end": 19.62688506529682,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.62688506529682,
+          "end": 19.776885065296817,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_research_planning": 100.0
+          }
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 19.776885065296817,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 19.776885065296817,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 100.0
+          }
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 20.539401558026423,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 50.0,
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 20.539401558026423,
+          "end": 20.5810001740247,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_data_analysis": 50.0,
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_query_planning": 50.0
+          }
+        },
+        {
+          "start": 20.5810001740247,
+          "end": 20.881000174024702,
+          "total": 100.0,
+          "allocations": {
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_query_planning": 33.333333333333336,
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_data_analysis": 33.333333333333336,
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_query_planning": 33.333333333333336
+          }
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 20.881000174024702,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 20.881000174024702,
+          "total": 100.0,
+          "allocations": {
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_web_search": 50.0,
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 21.4810001740247,
+          "total": 100.0,
+          "allocations": {
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_web_search": 33.333333333333336,
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_data_analysis": 33.333333333333336,
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 21.4810001740247,
+          "end": 21.7310001740247,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 21.7310001740247,
+          "end": 21.7310001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 21.7310001740247,
+          "end": 22.0810001740247,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_synthesis": 100.0
+          }
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.0810001740247,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_synthesis": 100.0
+          }
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.0810001740247,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_synthesis": 50.0,
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.231000174024697,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_synthesis": 33.333333333333336,
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_result_ranking": 33.333333333333336,
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_result_ranking": 33.333333333333336
+          }
+        },
+        {
+          "start": 22.231000174024697,
+          "end": 22.5310001740247,
+          "total": 100.0,
+          "allocations": {
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_result_ranking": 50.0,
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 22.5310001740247,
+          "end": 23.10743012080921,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.10743012080921,
+          "end": 23.257430120809207,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_research_planning": 100.0
+          }
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.257430120809207,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.257430120809207,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_literature_search": 100.0
+          }
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.8883435245359,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_data_analysis": 50.0,
+            "74a25519-e039-4b79-a77e-76b40ac7f643_literature_search": 50.0
+          }
+        },
+        {
+          "start": 23.8883435245359,
+          "end": 24.188343524535902,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_data_analysis": 50.0,
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_research_planning": 50.0
+          }
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.188343524535902,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.188343524535902,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_data_analysis": 50.0,
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_literature_search": 50.0
+          }
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.5883435245359,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_data_analysis": 33.333333333333336,
+            "74a25519-e039-4b79-a77e-76b40ac7f643_data_analysis": 33.333333333333336,
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 24.5883435245359,
+          "end": 25.121676857869236,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_data_analysis": 50.0,
+            "74a25519-e039-4b79-a77e-76b40ac7f643_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 25.121676857869236,
+          "end": 25.121676857869236,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 25.121676857869236,
+          "end": 25.3883435245359,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_data_analysis": 50.0,
+            "74a25519-e039-4b79-a77e-76b40ac7f643_synthesis": 50.0
+          }
+        },
+        {
+          "start": 25.3883435245359,
+          "end": 25.921676857869237,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_data_analysis": 50.0,
+            "74a25519-e039-4b79-a77e-76b40ac7f643_synthesis": 50.0
+          }
+        },
+        {
+          "start": 25.921676857869237,
+          "end": 25.921676857869237,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 25.921676857869237,
+          "end": 26.321676857869235,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_synthesis": 100.0
+          }
+        },
+        {
+          "start": 26.321676857869235,
+          "end": 27.588115124341325,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.588115124341325,
+          "end": 27.688115124341326,
+          "total": 100.0,
+          "allocations": {
+            "8ed73d1b-f57f-4153-b803-4187984f8334_query_planning": 100.0
+          }
+        },
+        {
+          "start": 27.688115124341326,
+          "end": 27.688115124341326,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.688115124341326,
+          "end": 27.9896268933408,
+          "total": 100.0,
+          "allocations": {
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 100.0
+          }
+        },
+        {
+          "start": 27.9896268933408,
+          "end": 28.1396268933408,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_research_planning": 100.0
+          }
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.1396268933408,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.1396268933408,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 100.0
+          }
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.199589222001677,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 50.0,
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 28.199589222001677,
+          "end": 28.649589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_research_planning": 33.333333333333336,
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 33.333333333333336
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.649589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.649589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 50.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 50.0
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.874589222001678,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 33.333333333333336,
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 28.874589222001678,
+          "end": 28.874589222001678,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 33.333333333333336,
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 28.874589222001678,
+          "end": 29.67458922200168,
+          "total": 100.0,
+          "allocations": {
+            "8ed73d1b-f57f-4153-b803-4187984f8334_result_ranking": 25.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 25.0,
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 25.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 25.0
+          }
+        },
+        {
+          "start": 29.67458922200168,
+          "end": 30.274589222001676,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 50.0,
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 30.274589222001676,
+          "end": 30.42458922200168,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 50.0,
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 30.42458922200168,
+          "end": 30.42458922200168,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 30.42458922200168,
+          "end": 30.499589222001678,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_synthesis": 50.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 30.499589222001678,
+          "end": 30.724589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_synthesis": 50.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 30.724589222001676,
+          "end": 30.724589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_synthesis": 100.0
+          }
+        },
+        {
+          "start": 30.724589222001676,
+          "end": 31.160974211050675,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_synthesis": 50.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 50.0
+          }
+        },
+        {
+          "start": 31.160974211050675,
+          "end": 31.460974211050676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_synthesis": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 33.333333333333336,
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_query_planning": 33.333333333333336
+          }
+        },
+        {
+          "start": 31.460974211050676,
+          "end": 31.460974211050676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_synthesis": 50.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 50.0
+          }
+        },
+        {
+          "start": 31.460974211050676,
+          "end": 31.638349461548568,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_synthesis": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 33.333333333333336,
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 31.638349461548568,
+          "end": 31.93834946154857,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_synthesis": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 33.333333333333336,
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_query_planning": 33.333333333333336
+          }
+        },
+        {
+          "start": 31.93834946154857,
+          "end": 31.93834946154857,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 100.0
+          }
+        },
+        {
+          "start": 31.93834946154857,
+          "end": 32.03834946154857,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 50.0,
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 50.0
+          }
+        },
+        {
+          "start": 32.03834946154857,
+          "end": 32.03834946154857,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 100.0
+          }
+        },
+        {
+          "start": 32.03834946154857,
+          "end": 32.039707439047895,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 50.0,
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 32.039707439047895,
+          "end": 32.33970743904789,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_query_planning": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_synthesis": 33.333333333333336,
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_result_ranking": 33.333333333333336
+          }
+        },
+        {
+          "start": 32.33970743904789,
+          "end": 32.33970743904789,
+          "total": 100.0,
+          "allocations": {
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 32.33970743904789,
+          "end": 32.444930284712406,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 32.444930284712406,
+          "end": 32.54493028471241,
+          "total": 100.0,
+          "allocations": {
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_query_planning": 50.0,
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 32.54493028471241,
+          "end": 32.594930284712405,
+          "total": 100.0,
+          "allocations": {
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_query_planning": 100.0
+          }
+        },
+        {
+          "start": 32.594930284712405,
+          "end": 32.594930284712405,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.594930284712405,
+          "end": 32.66993028471241,
+          "total": 100.0,
+          "allocations": {
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 100.0
+          }
+        },
+        {
+          "start": 32.66993028471241,
+          "end": 32.66993028471241,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.66993028471241,
+          "end": 32.86993028471241,
+          "total": 100.0,
+          "allocations": {
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 32.86993028471241,
+          "end": 33.17043774363336,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 33.17043774363336,
+          "end": 33.27043774363336,
+          "total": 100.0,
+          "allocations": {
+            "e04af720-d328-448c-901d-45a25ef44aae_query_planning": 100.0
+          }
+        },
+        {
+          "start": 33.27043774363336,
+          "end": 33.27043774363336,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 33.27043774363336,
+          "end": 33.870437743633346,
+          "total": 100.0,
+          "allocations": {
+            "e04af720-d328-448c-901d-45a25ef44aae_web_search": 100.0
+          }
+        },
+        {
+          "start": 33.870437743633346,
+          "end": 33.870437743633346,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 33.870437743633346,
+          "end": 34.07043774363335,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 34.07043774363335,
+          "end": 34.120437743633346,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.120437743633346,
+          "end": 34.120437743633346,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.120437743633346,
+          "end": 34.29543774363335,
+          "total": 100.0,
+          "allocations": {
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 34.29543774363335,
+          "end": 34.29543774363335,
+          "total": 100.0,
+          "allocations": {
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 34.29543774363335,
+          "end": 34.34543774363334,
+          "total": 100.0,
+          "allocations": {
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_result_ranking": 50.0,
+            "e04af720-d328-448c-901d-45a25ef44aae_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 34.34543774363334,
+          "end": 34.520437743633344,
+          "total": 100.0,
+          "allocations": {
+            "e04af720-d328-448c-901d-45a25ef44aae_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 34.520437743633344,
+          "end": 34.65829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.65829340535507,
+          "end": 34.75829340535507,
+          "total": 100.0,
+          "allocations": {
+            "2433eb2f-b21d-4e54-b4c1-5a2fbf9dec88_query_planning": 100.0
+          }
+        },
+        {
+          "start": 34.75829340535507,
+          "end": 34.75829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.75829340535507,
+          "end": 35.25829340535507,
+          "total": 100.0,
+          "allocations": {
+            "2433eb2f-b21d-4e54-b4c1-5a2fbf9dec88_web_search": 100.0
+          }
+        },
+        {
+          "start": 35.25829340535507,
+          "end": 35.25829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.25829340535507,
+          "end": 35.45829340535507,
+          "total": 100.0,
+          "allocations": {
+            "2433eb2f-b21d-4e54-b4c1-5a2fbf9dec88_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 35.45829340535507,
+          "end": 35.78936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.78936753891574,
+          "end": 35.88936753891574,
+          "total": 100.0,
+          "allocations": {
+            "745bbef8-8705-434c-b95a-7076fbb2424a_query_planning": 100.0
+          }
+        },
+        {
+          "start": 35.88936753891574,
+          "end": 35.88936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.88936753891574,
+          "end": 36.38936753891574,
+          "total": 100.0,
+          "allocations": {
+            "745bbef8-8705-434c-b95a-7076fbb2424a_web_search": 100.0
+          }
+        },
+        {
+          "start": 36.38936753891574,
+          "end": 36.38936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.38936753891574,
+          "end": 36.477813524023624,
+          "total": 100.0,
+          "allocations": {
+            "745bbef8-8705-434c-b95a-7076fbb2424a_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 36.477813524023624,
+          "end": 36.67781352402363,
+          "total": 100.0,
+          "allocations": {
+            "745bbef8-8705-434c-b95a-7076fbb2424a_result_ranking": 50.0,
+            "b9d9f780-b705-4fdc-a4fc-7205e0c003a9_query_planning": 50.0
+          }
+        },
+        {
+          "start": 36.67781352402363,
+          "end": 36.67781352402363,
+          "total": 100.0,
+          "allocations": {
+            "745bbef8-8705-434c-b95a-7076fbb2424a_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 36.67781352402363,
+          "end": 36.87781352402362,
+          "total": 100.0,
+          "allocations": {
+            "745bbef8-8705-434c-b95a-7076fbb2424a_result_ranking": 50.0,
+            "b9d9f780-b705-4fdc-a4fc-7205e0c003a9_web_search": 50.0
+          }
+        },
+        {
+          "start": 36.87781352402362,
+          "end": 37.17781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 37.17781352402363,
+          "end": 37.17781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 37.17781352402363,
+          "end": 37.37781352402363,
+          "total": 100.0,
+          "allocations": {
+            "b9d9f780-b705-4fdc-a4fc-7205e0c003a9_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 37.37781352402363,
+          "end": 38.37055527182322,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.37055527182322,
+          "end": 38.47055527182322,
+          "total": 100.0,
+          "allocations": {
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_query_planning": 100.0
+          }
+        },
+        {
+          "start": 38.47055527182322,
+          "end": 38.47055527182322,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.47055527182322,
+          "end": 38.6710243292779,
+          "total": 100.0,
+          "allocations": {
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 100.0
+          }
+        },
+        {
+          "start": 38.6710243292779,
+          "end": 38.7710243292779,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_query_planning": 100.0
+          }
+        },
+        {
+          "start": 38.7710243292779,
+          "end": 38.7710243292779,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.7710243292779,
+          "end": 39.362055353282706,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 100.0
+          }
+        },
+        {
+          "start": 39.362055353282706,
+          "end": 39.46205535328271,
+          "total": 100.0,
+          "allocations": {
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_query_planning": 100.0
+          }
+        },
+        {
+          "start": 39.46205535328271,
+          "end": 39.46205535328271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 39.46205535328271,
+          "end": 40.2746097897244,
+          "total": 100.0,
+          "allocations": {
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 100.0
+          }
+        },
+        {
+          "start": 40.2746097897244,
+          "end": 40.3746097897244,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_query_planning": 100.0
+          }
+        },
+        {
+          "start": 40.3746097897244,
+          "end": 40.3746097897244,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 40.3746097897244,
+          "end": 41.274609789724416,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 100.0
+          }
+        },
+        {
+          "start": 41.274609789724416,
+          "end": 41.274609789724416,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.274609789724416,
+          "end": 41.47460978972442,
+          "total": 100.0,
+          "allocations": {
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 41.47460978972442,
+          "end": 41.49247916544395,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.49247916544395,
+          "end": 41.592479165443955,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_query_planning": 100.0
+          }
+        },
+        {
+          "start": 41.592479165443955,
+          "end": 41.592479165443955,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.592479165443955,
+          "end": 41.79247916544394,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 100.0
+          }
+        },
+        {
+          "start": 41.79247916544394,
+          "end": 41.79247916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.79247916544394,
+          "end": 41.992479165443946,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 41.992479165443946,
+          "end": 42.01747916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.01747916544394,
+          "end": 42.01747916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.01747916544394,
+          "end": 42.11747916544394,
+          "total": 100.0,
+          "allocations": {
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 42.11747916544394,
+          "end": 42.11747916544394,
+          "total": 100.0,
+          "allocations": {
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 42.11747916544394,
+          "end": 42.317479165443935,
+          "total": 100.0,
+          "allocations": {
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_result_ranking": 50.0,
+            "f9451f6e-ee01-4873-9803-3db415510f72_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 42.317479165443935,
+          "end": 42.417479165443936,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 42.417479165443936,
+          "end": 42.44247916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.44247916544394,
+          "end": 42.44247916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.44247916544394,
+          "end": 42.60212654635982,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 42.60212654635982,
+          "end": 42.90212654635982,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_result_ranking": 50.0,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_research_planning": 50.0
+          }
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 42.90212654635982,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 42.90212654635982,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_result_ranking": 50.0,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_literature_search": 50.0
+          }
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 43.05212654635982,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_result_ranking": 33.333333333333336,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_data_analysis": 33.333333333333336,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 43.05212654635982,
+          "end": 43.90212654635982,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_data_analysis": 50.0,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_literature_search": 50.0
+          }
+        },
+        {
+          "start": 43.90212654635982,
+          "end": 44.22712654635982,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 44.22712654635982,
+          "end": 44.22712654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.22712654635982,
+          "end": 44.39887320740394,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 100.0
+          }
+        },
+        {
+          "start": 44.39887320740394,
+          "end": 44.568351187505776,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_research_planning": 50.0
+          }
+        },
+        {
+          "start": 44.568351187505776,
+          "end": 44.86835118750577,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 33.333333333333336,
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_query_planning": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_research_planning": 33.333333333333336
+          }
+        },
+        {
+          "start": 44.86835118750577,
+          "end": 44.86835118750577,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_research_planning": 50.0
+          }
+        },
+        {
+          "start": 44.86835118750577,
+          "end": 45.01382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 33.333333333333336,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_research_planning": 33.333333333333336
+          }
+        },
+        {
+          "start": 45.01382291176316,
+          "end": 45.21382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 25.0,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 25.0,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_query_planning": 25.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_research_planning": 25.0
+          }
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.21382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 50.0,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_query_planning": 50.0
+          }
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.21382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 33.333333333333336,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_query_planning": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.413822911763155,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 25.0,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 25.0,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_query_planning": 25.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 25.0
+          }
+        },
+        {
+          "start": 45.413822911763155,
+          "end": 45.413822911763155,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 33.333333333333336,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 45.413822911763155,
+          "end": 46.01382291176316,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 25.0,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 25.0,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 25.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 25.0
+          }
+        },
+        {
+          "start": 46.01382291176316,
+          "end": 46.01382291176316,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 50.0,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 50.0
+          }
+        },
+        {
+          "start": 46.01382291176316,
+          "end": 46.16382291176316,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 33.333333333333336,
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_synthesis": 33.333333333333336,
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_result_ranking": 33.333333333333336
+          }
+        },
+        {
+          "start": 46.16382291176316,
+          "end": 46.45788122182941,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 50.0,
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 46.45788122182941,
+          "end": 46.75788122182941,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 33.333333333333336,
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_query_planning": 33.333333333333336,
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_result_ranking": 33.333333333333336
+          }
+        },
+        {
+          "start": 46.75788122182941,
+          "end": 46.75788122182941,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 50.0,
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 46.75788122182941,
+          "end": 46.907881221829406,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 33.333333333333336,
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_result_ranking": 33.333333333333336
+          }
+        },
+        {
+          "start": 46.907881221829406,
+          "end": 46.9828812218294,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 46.9828812218294,
+          "end": 46.9828812218294,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 46.9828812218294,
+          "end": 47.3828812218294,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 50.0,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 47.3828812218294,
+          "end": 47.50788122182941,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 47.50788122182941,
+          "end": 47.782881221829406,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.782881221829406,
+          "end": 47.782881221829406,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.782881221829406,
+          "end": 47.807881221829405,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 100.0
+          }
+        },
+        {
+          "start": 47.807881221829405,
+          "end": 47.807881221829405,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 100.0
+          }
+        },
+        {
+          "start": 47.807881221829405,
+          "end": 48.2078812218294,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 50.0,
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 48.2078812218294,
+          "end": 48.252890664448934,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 100.0
+          }
+        },
+        {
+          "start": 48.252890664448934,
+          "end": 48.34801836396175,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 50.0,
+            "1c2dbe4f-d410-43c0-afa4-efd3f84e78ab_query_planning": 50.0
+          }
+        },
+        {
+          "start": 48.34801836396175,
+          "end": 48.64801836396175,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 33.333333333333336,
+            "be3d4aaf-28b9-4b22-a479-25b03d1f00fd_query_planning": 33.333333333333336,
+            "1c2dbe4f-d410-43c0-afa4-efd3f84e78ab_query_planning": 33.333333333333336
+          }
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.64801836396175,
+          "total": 100.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 100.0
+          }
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.64801836396175,
+          "total": 100.0,
+          "allocations": {
+            "be3d4aaf-28b9-4b22-a479-25b03d1f00fd_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 50.0
+          }
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.873018363961755,
+          "total": 100.0,
+          "allocations": {
+            "1c2dbe4f-d410-43c0-afa4-efd3f84e78ab_web_search": 33.333333333333336,
+            "be3d4aaf-28b9-4b22-a479-25b03d1f00fd_web_search": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_synthesis": 33.333333333333336
+          }
+        },
+        {
+          "start": 48.873018363961755,
+          "end": 49.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 49.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 49.64801836396175,
+          "total": 100.0,
+          "allocations": {
+            "1c2dbe4f-d410-43c0-afa4-efd3f84e78ab_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 50.048018363961745,
+          "total": 100.0,
+          "allocations": {
+            "1c2dbe4f-d410-43c0-afa4-efd3f84e78ab_result_ranking": 50.0,
+            "be3d4aaf-28b9-4b22-a479-25b03d1f00fd_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 50.048018363961745,
+          "end": 50.21868440526097,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.21868440526097,
+          "end": 50.318684405260974,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_query_planning": 100.0
+          }
+        },
+        {
+          "start": 50.318684405260974,
+          "end": 50.318684405260974,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.318684405260974,
+          "end": 50.5926069092158,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 100.0
+          }
+        },
+        {
+          "start": 50.5926069092158,
+          "end": 50.692606909215804,
+          "total": 100.0,
+          "allocations": {
+            "e04609dc-a85a-4a41-b900-e10db49d6477_query_planning": 100.0
+          }
+        },
+        {
+          "start": 50.692606909215804,
+          "end": 50.692606909215804,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.692606909215804,
+          "end": 50.72713477097441,
+          "total": 100.0,
+          "allocations": {
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 100.0
+          }
+        },
+        {
+          "start": 50.72713477097441,
+          "end": 50.91640799879382,
+          "total": 100.0,
+          "allocations": {
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 50.0,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_query_planning": 50.0
+          }
+        },
+        {
+          "start": 50.91640799879382,
+          "end": 51.016407998793824,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_research_planning": 50.0,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_query_planning": 50.0
+          }
+        },
+        {
+          "start": 51.016407998793824,
+          "end": 51.016407998793824,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_research_planning": 100.0
+          }
+        },
+        {
+          "start": 51.016407998793824,
+          "end": 51.21640799879382,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_research_planning": 50.0,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 50.0
+          }
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.21640799879382,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.21640799879382,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.94974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 50.0,
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 51.94974133212716,
+          "end": 51.94974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 51.94974133212716,
+          "end": 52.34974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 50.0,
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 52.34974133212716,
+          "end": 52.39974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 52.39974133212716,
+          "end": 52.39974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 52.39974133212716,
+          "end": 52.59974133212716,
+          "total": 100.0,
+          "allocations": {
+            "e04609dc-a85a-4a41-b900-e10db49d6477_result_ranking": 50.0,
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 52.59974133212716,
+          "end": 52.59974133212716,
+          "total": 100.0,
+          "allocations": {
+            "e04609dc-a85a-4a41-b900-e10db49d6477_result_ranking": 50.0,
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 52.59974133212716,
+          "end": 52.84974133212715,
+          "total": 100.0,
+          "allocations": {
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_result_ranking": 33.333333333333336,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_result_ranking": 33.333333333333336,
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 33.333333333333336
+          }
+        },
+        {
+          "start": 52.84974133212715,
+          "end": 52.88307466546049,
+          "total": 100.0,
+          "allocations": {
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_result_ranking": 50.0,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_result_ranking": 50.0
+          }
+        },
+        {
+          "start": 52.88307466546049,
+          "end": 52.98307466546049,
+          "total": 100.0,
+          "allocations": {
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 52.98307466546049,
+          "end": 53.15768748873956,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 53.15768748873956,
+          "end": 53.30768748873956,
+          "total": 100.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_research_planning": 100.0
+          }
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.30768748873956,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.30768748873956,
+          "total": 100.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_literature_search": 100.0
+          }
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.37435415540622,
+          "total": 100.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_literature_search": 50.0,
+            "92a4d2d0-919f-4b91-936e-325f112e1180_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 53.37435415540622,
+          "end": 53.37435415540622,
+          "total": 100.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_literature_search": 50.0,
+            "92a4d2d0-919f-4b91-936e-325f112e1180_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 53.37435415540622,
+          "end": 54.34102082207289,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_synthesis": 33.333333333333336,
+            "92a4d2d0-919f-4b91-936e-325f112e1180_literature_search": 33.333333333333336,
+            "92a4d2d0-919f-4b91-936e-325f112e1180_data_analysis": 33.333333333333336
+          }
+        },
+        {
+          "start": 54.34102082207289,
+          "end": 54.49657637762844,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_synthesis": 50.0,
+            "92a4d2d0-919f-4b91-936e-325f112e1180_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 54.49657637762844,
+          "end": 54.86324304429511,
+          "total": 100.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 54.86324304429511,
+          "end": 54.86324304429511,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 54.86324304429511,
+          "end": 55.26324304429511,
+          "total": 100.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_synthesis": 100.0
+          }
+        },
+        {
+          "start": 55.26324304429511,
+          "end": 56.67451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 56.67451035798827,
+          "end": 56.77451035798827,
+          "total": 100.0,
+          "allocations": {
+            "becfcda9-76db-46c9-bc12-19790996b3a7_query_planning": 100.0
+          }
+        },
+        {
+          "start": 56.77451035798827,
+          "end": 56.77451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 56.77451035798827,
+          "end": 57.27451035798827,
+          "total": 100.0,
+          "allocations": {
+            "becfcda9-76db-46c9-bc12-19790996b3a7_web_search": 100.0
+          }
+        },
+        {
+          "start": 57.27451035798827,
+          "end": 57.27451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.27451035798827,
+          "end": 57.47451035798827,
+          "total": 100.0,
+          "allocations": {
+            "becfcda9-76db-46c9-bc12-19790996b3a7_result_ranking": 100.0
+          }
+        },
+        {
+          "start": 57.47451035798827,
+          "end": 57.562352864194935,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.562352864194935,
+          "end": 57.71235286419493,
+          "total": 100.0,
+          "allocations": {
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_research_planning": 100.0
+          }
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 57.71235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 57.71235286419493,
+          "total": 100.0,
+          "allocations": {
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_literature_search": 100.0
+          }
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 58.71235286419493,
+          "total": 100.0,
+          "allocations": {
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_literature_search": 50.0,
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_data_analysis": 50.0
+          }
+        },
+        {
+          "start": 58.71235286419493,
+          "end": 59.01235286419493,
+          "total": 100.0,
+          "allocations": {
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_data_analysis": 100.0
+          }
+        },
+        {
+          "start": 59.01235286419493,
+          "end": 59.01235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 59.01235286419493,
+          "end": 59.41235286419493,
+          "total": 100.0,
+          "allocations": {
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_synthesis": 100.0
+          }
+        },
+        {
+          "start": 59.41235286419493,
+          "end": 59.41235286419493,
+          "total": 0.0,
+          "allocations": {}
+        }
+      ]
+    },
+    {
+      "type": "npu",
+      "timeline": []
+    },
+    {
+      "type": "memory",
+      "timeline": [
+        {
+          "start": 10.06398943687726,
+          "end": 10.663989436877259,
+          "total": 1000.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 10.663989436877259,
+          "end": 10.663989436877259,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 10.663989436877259,
+          "end": 11.063989436877259,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.063989436877259,
+          "end": 11.36398943687726,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.36398943687726,
+          "end": 11.36398943687726,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.36398943687726,
+          "end": 11.418155536431566,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.418155536431566,
+          "end": 11.618155536431566,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.618155536431566,
+          "end": 11.618155536431566,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.618155536431566,
+          "end": 11.75740527735626,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.75740527735626,
+          "end": 11.957405277356258,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.957405277356258,
+          "end": 11.957405277356258,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.957405277356258,
+          "end": 12.09371659668981,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.09371659668981,
+          "end": 12.096597861185469,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.096597861185469,
+          "end": 12.21627539840283,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.21627539840283,
+          "end": 12.516275398402833,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.516275398402833,
+          "end": 12.516275398402833,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.516275398402833,
+          "end": 12.64127539840283,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.64127539840283,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.64127539840283,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.710380486704846,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.710380486704846,
+          "end": 12.960380486704846,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 12.960380486704846,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 12.960380486704846,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 13.327047153371522,
+          "total": 1000.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 13.327047153371522,
+          "end": 13.327047153371522,
+          "total": 1000.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 13.327047153371522,
+          "end": 13.368713820038177,
+          "total": 1000.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.368713820038177,
+          "total": 1000.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.368713820038177,
+          "total": 1000.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.493713820038181,
+          "total": 1000.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 500.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 500.0
+          }
+        },
+        {
+          "start": 13.493713820038181,
+          "end": 14.160380486704854,
+          "total": 1000.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_data_analysis": 500.0,
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 500.0
+          }
+        },
+        {
+          "start": 14.160380486704854,
+          "end": 14.613158264482628,
+          "total": 1000.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 14.613158264482628,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 14.613158264482628,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 15.413158264482629,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.413158264482629,
+          "end": 15.577047153371517,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.577047153371517,
+          "end": 15.677047153371516,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.677047153371516,
+          "end": 15.779824931149294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.779824931149294,
+          "end": 15.779824931149294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.779824931149294,
+          "end": 15.885380486704848,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.885380486704848,
+          "end": 15.885380486704848,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.885380486704848,
+          "end": 16.23873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 16.23873712736271,
+          "end": 16.53873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 16.53873712736271,
+          "end": 16.53873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 16.53873712736271,
+          "end": 17.03873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.03873712736271,
+          "end": 17.03873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.03873712736271,
+          "end": 17.122070460696047,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.122070460696047,
+          "end": 17.333181571807156,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.333181571807156,
+          "end": 17.399848238473822,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.399848238473822,
+          "end": 18.07690143461724,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.07690143461724,
+          "end": 18.176901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.176901434617243,
+          "end": 18.176901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.176901434617243,
+          "end": 18.676901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.676901434617243,
+          "end": 18.676901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.676901434617243,
+          "end": 18.876901434617242,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.876901434617242,
+          "end": 19.62688506529682,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.62688506529682,
+          "end": 19.776885065296817,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 19.776885065296817,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 19.776885065296817,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 20.539401558026423,
+          "total": 1000.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 20.539401558026423,
+          "end": 20.5810001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 20.5810001740247,
+          "end": 20.881000174024702,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 20.881000174024702,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 20.881000174024702,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 21.4810001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 21.4810001740247,
+          "end": 21.7310001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 21.7310001740247,
+          "end": 21.7310001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 21.7310001740247,
+          "end": 22.0810001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.0810001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.0810001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.231000174024697,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.231000174024697,
+          "end": 22.5310001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.5310001740247,
+          "end": 23.10743012080921,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.10743012080921,
+          "end": 23.257430120809207,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.257430120809207,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.257430120809207,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.8883435245359,
+          "total": 1000.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 23.8883435245359,
+          "end": 24.188343524535902,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.188343524535902,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.188343524535902,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.5883435245359,
+          "total": 1000.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 24.5883435245359,
+          "end": 25.121676857869236,
+          "total": 1000.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 25.121676857869236,
+          "end": 25.121676857869236,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 25.121676857869236,
+          "end": 25.3883435245359,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 25.3883435245359,
+          "end": 25.921676857869237,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 25.921676857869237,
+          "end": 25.921676857869237,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 25.921676857869237,
+          "end": 26.321676857869235,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 26.321676857869235,
+          "end": 27.588115124341325,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.588115124341325,
+          "end": 27.688115124341326,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.688115124341326,
+          "end": 27.688115124341326,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.688115124341326,
+          "end": 27.9896268933408,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.9896268933408,
+          "end": 28.1396268933408,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.1396268933408,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.1396268933408,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.199589222001677,
+          "total": 1000.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 28.199589222001677,
+          "end": 28.649589222001676,
+          "total": 1000.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.649589222001676,
+          "total": 1000.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.649589222001676,
+          "total": 1000.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.874589222001678,
+          "total": 1000.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 500.0,
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_data_analysis": 500.0
+          }
+        },
+        {
+          "start": 28.874589222001678,
+          "end": 28.874589222001678,
+          "total": 1000.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 28.874589222001678,
+          "end": 29.67458922200168,
+          "total": 1000.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 29.67458922200168,
+          "end": 30.274589222001676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 30.274589222001676,
+          "end": 30.42458922200168,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 30.42458922200168,
+          "end": 30.42458922200168,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 30.42458922200168,
+          "end": 30.499589222001678,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 30.499589222001678,
+          "end": 30.724589222001676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 30.724589222001676,
+          "end": 30.724589222001676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 30.724589222001676,
+          "end": 31.160974211050675,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.160974211050675,
+          "end": 31.460974211050676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.460974211050676,
+          "end": 31.460974211050676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.460974211050676,
+          "end": 31.638349461548568,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.638349461548568,
+          "end": 31.93834946154857,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.93834946154857,
+          "end": 31.93834946154857,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.93834946154857,
+          "end": 32.03834946154857,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.03834946154857,
+          "end": 32.03834946154857,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.03834946154857,
+          "end": 32.039707439047895,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.039707439047895,
+          "end": 32.33970743904789,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.33970743904789,
+          "end": 32.33970743904789,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.33970743904789,
+          "end": 32.444930284712406,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.444930284712406,
+          "end": 32.54493028471241,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.54493028471241,
+          "end": 32.594930284712405,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.594930284712405,
+          "end": 32.594930284712405,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.594930284712405,
+          "end": 32.66993028471241,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.66993028471241,
+          "end": 32.66993028471241,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.66993028471241,
+          "end": 32.86993028471241,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 32.86993028471241,
+          "end": 33.17043774363336,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 33.17043774363336,
+          "end": 33.27043774363336,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 33.27043774363336,
+          "end": 33.27043774363336,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 33.27043774363336,
+          "end": 33.870437743633346,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 33.870437743633346,
+          "end": 33.870437743633346,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 33.870437743633346,
+          "end": 34.07043774363335,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.07043774363335,
+          "end": 34.120437743633346,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.120437743633346,
+          "end": 34.120437743633346,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.120437743633346,
+          "end": 34.29543774363335,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.29543774363335,
+          "end": 34.29543774363335,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.29543774363335,
+          "end": 34.34543774363334,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.34543774363334,
+          "end": 34.520437743633344,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.520437743633344,
+          "end": 34.65829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.65829340535507,
+          "end": 34.75829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.75829340535507,
+          "end": 34.75829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.75829340535507,
+          "end": 35.25829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.25829340535507,
+          "end": 35.25829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.25829340535507,
+          "end": 35.45829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.45829340535507,
+          "end": 35.78936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.78936753891574,
+          "end": 35.88936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.88936753891574,
+          "end": 35.88936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.88936753891574,
+          "end": 36.38936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.38936753891574,
+          "end": 36.38936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.38936753891574,
+          "end": 36.477813524023624,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.477813524023624,
+          "end": 36.67781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.67781352402363,
+          "end": 36.67781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.67781352402363,
+          "end": 36.87781352402362,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.87781352402362,
+          "end": 37.17781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 37.17781352402363,
+          "end": 37.17781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 37.17781352402363,
+          "end": 37.37781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 37.37781352402363,
+          "end": 38.37055527182322,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.37055527182322,
+          "end": 38.47055527182322,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.47055527182322,
+          "end": 38.47055527182322,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.47055527182322,
+          "end": 38.6710243292779,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.6710243292779,
+          "end": 38.7710243292779,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.7710243292779,
+          "end": 38.7710243292779,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.7710243292779,
+          "end": 39.362055353282706,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 39.362055353282706,
+          "end": 39.46205535328271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 39.46205535328271,
+          "end": 39.46205535328271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 39.46205535328271,
+          "end": 40.2746097897244,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 40.2746097897244,
+          "end": 40.3746097897244,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 40.3746097897244,
+          "end": 40.3746097897244,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 40.3746097897244,
+          "end": 41.274609789724416,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.274609789724416,
+          "end": 41.274609789724416,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.274609789724416,
+          "end": 41.47460978972442,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.47460978972442,
+          "end": 41.49247916544395,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.49247916544395,
+          "end": 41.592479165443955,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.592479165443955,
+          "end": 41.592479165443955,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.592479165443955,
+          "end": 41.79247916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.79247916544394,
+          "end": 41.79247916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.79247916544394,
+          "end": 41.992479165443946,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 41.992479165443946,
+          "end": 42.01747916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.01747916544394,
+          "end": 42.01747916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.01747916544394,
+          "end": 42.11747916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.11747916544394,
+          "end": 42.11747916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.11747916544394,
+          "end": 42.317479165443935,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.317479165443935,
+          "end": 42.417479165443936,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.417479165443936,
+          "end": 42.44247916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.44247916544394,
+          "end": 42.44247916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.44247916544394,
+          "end": 42.60212654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.60212654635982,
+          "end": 42.90212654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 42.90212654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 42.90212654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 43.05212654635982,
+          "total": 1000.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 43.05212654635982,
+          "end": 43.90212654635982,
+          "total": 1000.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 43.90212654635982,
+          "end": 44.22712654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.22712654635982,
+          "end": 44.22712654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.22712654635982,
+          "end": 44.39887320740394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.39887320740394,
+          "end": 44.568351187505776,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.568351187505776,
+          "end": 44.86835118750577,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.86835118750577,
+          "end": 44.86835118750577,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.86835118750577,
+          "end": 45.01382291176316,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 45.01382291176316,
+          "end": 45.21382291176316,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.21382291176316,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.21382291176316,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.413822911763155,
+          "total": 1000.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 45.413822911763155,
+          "end": 45.413822911763155,
+          "total": 1000.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 45.413822911763155,
+          "end": 46.01382291176316,
+          "total": 1000.0,
+          "allocations": {
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 46.01382291176316,
+          "end": 46.01382291176316,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 46.01382291176316,
+          "end": 46.16382291176316,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 46.16382291176316,
+          "end": 46.45788122182941,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 46.45788122182941,
+          "end": 46.75788122182941,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 46.75788122182941,
+          "end": 46.75788122182941,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 46.75788122182941,
+          "end": 46.907881221829406,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 46.907881221829406,
+          "end": 46.9828812218294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 46.9828812218294,
+          "end": 46.9828812218294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 46.9828812218294,
+          "end": 47.3828812218294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.3828812218294,
+          "end": 47.50788122182941,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.50788122182941,
+          "end": 47.782881221829406,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.782881221829406,
+          "end": 47.782881221829406,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.782881221829406,
+          "end": 47.807881221829405,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.807881221829405,
+          "end": 47.807881221829405,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.807881221829405,
+          "end": 48.2078812218294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.2078812218294,
+          "end": 48.252890664448934,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.252890664448934,
+          "end": 48.34801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.34801836396175,
+          "end": 48.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.873018363961755,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.873018363961755,
+          "end": 49.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 49.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 49.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 50.048018363961745,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.048018363961745,
+          "end": 50.21868440526097,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.21868440526097,
+          "end": 50.318684405260974,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.318684405260974,
+          "end": 50.318684405260974,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.318684405260974,
+          "end": 50.5926069092158,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.5926069092158,
+          "end": 50.692606909215804,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.692606909215804,
+          "end": 50.692606909215804,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.692606909215804,
+          "end": 50.72713477097441,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.72713477097441,
+          "end": 50.91640799879382,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.91640799879382,
+          "end": 51.016407998793824,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 51.016407998793824,
+          "end": 51.016407998793824,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 51.016407998793824,
+          "end": 51.21640799879382,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.21640799879382,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.21640799879382,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.94974133212716,
+          "total": 1000.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 51.94974133212716,
+          "end": 51.94974133212716,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 51.94974133212716,
+          "end": 52.34974133212716,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 52.34974133212716,
+          "end": 52.39974133212716,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 52.39974133212716,
+          "end": 52.39974133212716,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 52.39974133212716,
+          "end": 52.59974133212716,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 52.59974133212716,
+          "end": 52.59974133212716,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 52.59974133212716,
+          "end": 52.84974133212715,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 52.84974133212715,
+          "end": 52.88307466546049,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 52.88307466546049,
+          "end": 52.98307466546049,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 52.98307466546049,
+          "end": 53.15768748873956,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 53.15768748873956,
+          "end": 53.30768748873956,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.30768748873956,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.30768748873956,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.37435415540622,
+          "total": 1000.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 53.37435415540622,
+          "end": 53.37435415540622,
+          "total": 1000.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 53.37435415540622,
+          "end": 54.34102082207289,
+          "total": 1000.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 54.34102082207289,
+          "end": 54.49657637762844,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 54.49657637762844,
+          "end": 54.86324304429511,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 54.86324304429511,
+          "end": 54.86324304429511,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 54.86324304429511,
+          "end": 55.26324304429511,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 55.26324304429511,
+          "end": 56.67451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 56.67451035798827,
+          "end": 56.77451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 56.77451035798827,
+          "end": 56.77451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 56.77451035798827,
+          "end": 57.27451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.27451035798827,
+          "end": 57.27451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.27451035798827,
+          "end": 57.47451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.47451035798827,
+          "end": 57.562352864194935,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.562352864194935,
+          "end": 57.71235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 57.71235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 57.71235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 58.71235286419493,
+          "total": 1000.0,
+          "allocations": {
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_data_analysis": 1000.0
+          }
+        },
+        {
+          "start": 58.71235286419493,
+          "end": 59.01235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 59.01235286419493,
+          "end": 59.01235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 59.01235286419493,
+          "end": 59.41235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 59.41235286419493,
+          "end": 59.41235286419493,
+          "total": 0.0,
+          "allocations": {}
+        }
+      ]
+    },
+    {
+      "type": "network",
+      "timeline": [
+        {
+          "start": 1.0385361799537183,
+          "end": 1.5385361799537183,
+          "total": 100.0,
+          "allocations": {
+            "e9cb8689-715d-465e-98ba-85dfec9d2f99_web_search": 100.0
+          }
+        },
+        {
+          "start": 1.5385361799537183,
+          "end": 1.5385361799537183,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 1.5385361799537183,
+          "end": 1.7385361799537182,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 1.7385361799537182,
+          "end": 6.958779041788761,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 6.958779041788761,
+          "end": 7.05877904178876,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 7.05877904178876,
+          "end": 7.05877904178876,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 7.05877904178876,
+          "end": 7.55877904178876,
+          "total": 100.0,
+          "allocations": {
+            "08b4a3f9-5e6b-43ab-9648-80a0c552298c_web_search": 100.0
+          }
+        },
+        {
+          "start": 7.55877904178876,
+          "end": 7.55877904178876,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 7.55877904178876,
+          "end": 7.7587790417887605,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 7.7587790417887605,
+          "end": 9.59227042887966,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 9.59227042887966,
+          "end": 9.69227042887966,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 9.69227042887966,
+          "end": 9.69227042887966,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 9.69227042887966,
+          "end": 9.91398943687726,
+          "total": 100.0,
+          "allocations": {
+            "ddc43ad2-13a8-4bba-a118-a74589b99926_web_search": 100.0
+          }
+        },
+        {
+          "start": 9.91398943687726,
+          "end": 10.06398943687726,
+          "total": 100.0,
+          "allocations": {
+            "ddc43ad2-13a8-4bba-a118-a74589b99926_web_search": 100.0
+          }
+        },
+        {
+          "start": 10.06398943687726,
+          "end": 10.06398943687726,
+          "total": 100.0,
+          "allocations": {
+            "ddc43ad2-13a8-4bba-a118-a74589b99926_web_search": 100.0
+          }
+        },
+        {
+          "start": 10.06398943687726,
+          "end": 10.06398943687726,
+          "total": 100.0,
+          "allocations": {
+            "ddc43ad2-13a8-4bba-a118-a74589b99926_web_search": 50.0,
+            "6efcc435-b990-4807-a69b-fa50c16515b9_literature_search": 50.0
+          }
+        },
+        {
+          "start": 10.06398943687726,
+          "end": 10.663989436877259,
+          "total": 100.0,
+          "allocations": {
+            "ddc43ad2-13a8-4bba-a118-a74589b99926_web_search": 50.0,
+            "6efcc435-b990-4807-a69b-fa50c16515b9_literature_search": 50.0
+          }
+        },
+        {
+          "start": 10.663989436877259,
+          "end": 10.663989436877259,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 10.663989436877259,
+          "end": 11.063989436877259,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 11.063989436877259,
+          "end": 11.36398943687726,
+          "total": 100.0,
+          "allocations": {
+            "6efcc435-b990-4807-a69b-fa50c16515b9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 11.36398943687726,
+          "end": 11.36398943687726,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.36398943687726,
+          "end": 11.418155536431566,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.418155536431566,
+          "end": 11.618155536431566,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.618155536431566,
+          "end": 11.618155536431566,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 11.618155536431566,
+          "end": 11.75740527735626,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_web_search": 100.0
+          }
+        },
+        {
+          "start": 11.75740527735626,
+          "end": 11.957405277356258,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_web_search": 100.0
+          }
+        },
+        {
+          "start": 11.957405277356258,
+          "end": 11.957405277356258,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_web_search": 100.0
+          }
+        },
+        {
+          "start": 11.957405277356258,
+          "end": 12.09371659668981,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_web_search": 50.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 50.0
+          }
+        },
+        {
+          "start": 12.09371659668981,
+          "end": 12.096597861185469,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_web_search": 50.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 50.0
+          }
+        },
+        {
+          "start": 12.096597861185469,
+          "end": 12.21627539840283,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_web_search": 50.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 50.0
+          }
+        },
+        {
+          "start": 12.21627539840283,
+          "end": 12.516275398402833,
+          "total": 100.0,
+          "allocations": {
+            "1cfb76ce-fd1f-4777-b505-825c17a2cf28_web_search": 50.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 50.0
+          }
+        },
+        {
+          "start": 12.516275398402833,
+          "end": 12.516275398402833,
+          "total": 100.0,
+          "allocations": {
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 100.0
+          }
+        },
+        {
+          "start": 12.516275398402833,
+          "end": 12.64127539840283,
+          "total": 100.0,
+          "allocations": {
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 100.0
+          }
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.64127539840283,
+          "total": 100.0,
+          "allocations": {
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 100.0
+          }
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.64127539840283,
+          "total": 100.0,
+          "allocations": {
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 50.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 50.0
+          }
+        },
+        {
+          "start": 12.64127539840283,
+          "end": 12.710380486704846,
+          "total": 100.0,
+          "allocations": {
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 33.333333333333336,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 33.333333333333336,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 12.710380486704846,
+          "end": 12.960380486704846,
+          "total": 100.0,
+          "allocations": {
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 33.333333333333336,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 33.333333333333336,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 12.960380486704846,
+          "total": 100.0,
+          "allocations": {
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 33.333333333333336,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 33.333333333333336,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 12.960380486704846,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 25.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 25.0
+          }
+        },
+        {
+          "start": 12.960380486704846,
+          "end": 13.327047153371522,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 25.0,
+            "00cc0578-5851-4c87-ab6c-6b7fc38abaa1_web_search": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 25.0
+          }
+        },
+        {
+          "start": 13.327047153371522,
+          "end": 13.327047153371522,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 33.333333333333336,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 33.333333333333336,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 13.327047153371522,
+          "end": 13.368713820038177,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 33.333333333333336,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 33.333333333333336,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.368713820038177,
+          "total": 100.0,
+          "allocations": {
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 33.333333333333336,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 33.333333333333336,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.368713820038177,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 25.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 25.0
+          }
+        },
+        {
+          "start": 13.368713820038177,
+          "end": 13.493713820038181,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 25.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 25.0
+          }
+        },
+        {
+          "start": 13.493713820038181,
+          "end": 14.160380486704854,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 25.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 25.0
+          }
+        },
+        {
+          "start": 14.160380486704854,
+          "end": 14.613158264482628,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 25.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 25.0,
+            "3c03f274-3ce5-420e-be10-43889430edec_web_search": 25.0,
+            "b2ad3e4a-c0b9-4dc1-b18f-2c3ac0a4f029_web_search": 25.0
+          }
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 14.613158264482628,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 50.0
+          }
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 14.613158264482628,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 50.0
+          }
+        },
+        {
+          "start": 14.613158264482628,
+          "end": 15.413158264482629,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 50.0
+          }
+        },
+        {
+          "start": 15.413158264482629,
+          "end": 15.577047153371517,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 50.0
+          }
+        },
+        {
+          "start": 15.577047153371517,
+          "end": 15.677047153371516,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 50.0
+          }
+        },
+        {
+          "start": 15.677047153371516,
+          "end": 15.779824931149294,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 50.0,
+            "b9b1aadd-eb82-440a-a641-094689b8b4fd_literature_search": 50.0
+          }
+        },
+        {
+          "start": 15.779824931149294,
+          "end": 15.779824931149294,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 100.0
+          }
+        },
+        {
+          "start": 15.779824931149294,
+          "end": 15.885380486704848,
+          "total": 100.0,
+          "allocations": {
+            "6194e292-71ef-426f-bc61-cdbb2d03b455_literature_search": 100.0
+          }
+        },
+        {
+          "start": 15.885380486704848,
+          "end": 15.885380486704848,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 15.885380486704848,
+          "end": 16.23873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 16.23873712736271,
+          "end": 16.53873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 16.53873712736271,
+          "end": 16.53873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 16.53873712736271,
+          "end": 17.03873712736271,
+          "total": 100.0,
+          "allocations": {
+            "7a8d8d55-0b16-440e-9fe3-c50315cf5710_web_search": 100.0
+          }
+        },
+        {
+          "start": 17.03873712736271,
+          "end": 17.03873712736271,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.03873712736271,
+          "end": 17.122070460696047,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.122070460696047,
+          "end": 17.333181571807156,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.333181571807156,
+          "end": 17.399848238473822,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 17.399848238473822,
+          "end": 18.07690143461724,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.07690143461724,
+          "end": 18.176901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.176901434617243,
+          "end": 18.176901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.176901434617243,
+          "end": 18.676901434617243,
+          "total": 100.0,
+          "allocations": {
+            "9dd08652-d2ae-42c6-820c-a5301924fff7_web_search": 100.0
+          }
+        },
+        {
+          "start": 18.676901434617243,
+          "end": 18.676901434617243,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.676901434617243,
+          "end": 18.876901434617242,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 18.876901434617242,
+          "end": 19.62688506529682,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.62688506529682,
+          "end": 19.776885065296817,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 19.776885065296817,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 19.776885065296817,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 100.0
+          }
+        },
+        {
+          "start": 19.776885065296817,
+          "end": 20.539401558026423,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 100.0
+          }
+        },
+        {
+          "start": 20.539401558026423,
+          "end": 20.5810001740247,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 100.0
+          }
+        },
+        {
+          "start": 20.5810001740247,
+          "end": 20.881000174024702,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 100.0
+          }
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 20.881000174024702,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 100.0
+          }
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 20.881000174024702,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 50.0,
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_web_search": 50.0
+          }
+        },
+        {
+          "start": 20.881000174024702,
+          "end": 21.4810001740247,
+          "total": 100.0,
+          "allocations": {
+            "7fdb22bb-65fd-48ac-b4d9-bb6ed31b2bde_literature_search": 33.333333333333336,
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_web_search": 33.333333333333336,
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 21.4810001740247,
+          "end": 21.7310001740247,
+          "total": 100.0,
+          "allocations": {
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_web_search": 50.0,
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_web_search": 50.0
+          }
+        },
+        {
+          "start": 21.7310001740247,
+          "end": 21.7310001740247,
+          "total": 100.0,
+          "allocations": {
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_web_search": 50.0,
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_web_search": 50.0
+          }
+        },
+        {
+          "start": 21.7310001740247,
+          "end": 22.0810001740247,
+          "total": 100.0,
+          "allocations": {
+            "2fea2358-28b4-4396-a82e-b338c56eb24a_web_search": 50.0,
+            "d77b47fe-ecf1-427a-be24-8cf5c46778dd_web_search": 50.0
+          }
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.0810001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.0810001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.0810001740247,
+          "end": 22.231000174024697,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.231000174024697,
+          "end": 22.5310001740247,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 22.5310001740247,
+          "end": 23.10743012080921,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.10743012080921,
+          "end": 23.257430120809207,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.257430120809207,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.257430120809207,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_literature_search": 100.0
+          }
+        },
+        {
+          "start": 23.257430120809207,
+          "end": 23.8883435245359,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_literature_search": 100.0
+          }
+        },
+        {
+          "start": 23.8883435245359,
+          "end": 24.188343524535902,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_literature_search": 100.0
+          }
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.188343524535902,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_literature_search": 100.0
+          }
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.188343524535902,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_literature_search": 50.0,
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_literature_search": 50.0
+          }
+        },
+        {
+          "start": 24.188343524535902,
+          "end": 24.5883435245359,
+          "total": 100.0,
+          "allocations": {
+            "74a25519-e039-4b79-a77e-76b40ac7f643_literature_search": 50.0,
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_literature_search": 50.0
+          }
+        },
+        {
+          "start": 24.5883435245359,
+          "end": 25.121676857869236,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_literature_search": 100.0
+          }
+        },
+        {
+          "start": 25.121676857869236,
+          "end": 25.121676857869236,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_literature_search": 100.0
+          }
+        },
+        {
+          "start": 25.121676857869236,
+          "end": 25.3883435245359,
+          "total": 100.0,
+          "allocations": {
+            "29f25a8f-2f41-4521-97f4-76ca5a213f19_literature_search": 100.0
+          }
+        },
+        {
+          "start": 25.3883435245359,
+          "end": 25.921676857869237,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 25.921676857869237,
+          "end": 25.921676857869237,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 25.921676857869237,
+          "end": 26.321676857869235,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 26.321676857869235,
+          "end": 27.588115124341325,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.588115124341325,
+          "end": 27.688115124341326,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.688115124341326,
+          "end": 27.688115124341326,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 27.688115124341326,
+          "end": 27.9896268933408,
+          "total": 100.0,
+          "allocations": {
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 100.0
+          }
+        },
+        {
+          "start": 27.9896268933408,
+          "end": 28.1396268933408,
+          "total": 100.0,
+          "allocations": {
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 100.0
+          }
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.1396268933408,
+          "total": 100.0,
+          "allocations": {
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 100.0
+          }
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.1396268933408,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 50.0,
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 50.0
+          }
+        },
+        {
+          "start": 28.1396268933408,
+          "end": 28.199589222001677,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 50.0,
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 50.0
+          }
+        },
+        {
+          "start": 28.199589222001677,
+          "end": 28.649589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 50.0,
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 50.0
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.649589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 50.0,
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 50.0
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.649589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 33.333333333333336,
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 28.649589222001676,
+          "end": 28.874589222001678,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 33.333333333333336,
+            "8ed73d1b-f57f-4153-b803-4187984f8334_web_search": 33.333333333333336,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 28.874589222001678,
+          "end": 28.874589222001678,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 50.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 50.0
+          }
+        },
+        {
+          "start": 28.874589222001678,
+          "end": 29.67458922200168,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 50.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 50.0
+          }
+        },
+        {
+          "start": 29.67458922200168,
+          "end": 30.274589222001676,
+          "total": 100.0,
+          "allocations": {
+            "cdeae5bd-d5fb-49be-bd7e-d1a5735fa1af_literature_search": 50.0,
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 50.0
+          }
+        },
+        {
+          "start": 30.274589222001676,
+          "end": 30.42458922200168,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 100.0
+          }
+        },
+        {
+          "start": 30.42458922200168,
+          "end": 30.42458922200168,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 100.0
+          }
+        },
+        {
+          "start": 30.42458922200168,
+          "end": 30.499589222001678,
+          "total": 100.0,
+          "allocations": {
+            "aa6e9ae2-2101-4bbd-a3b6-7ba7f7c38c5d_literature_search": 100.0
+          }
+        },
+        {
+          "start": 30.499589222001678,
+          "end": 30.724589222001676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 30.724589222001676,
+          "end": 30.724589222001676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 30.724589222001676,
+          "end": 31.160974211050675,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.160974211050675,
+          "end": 31.460974211050676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.460974211050676,
+          "end": 31.460974211050676,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 31.460974211050676,
+          "end": 31.638349461548568,
+          "total": 100.0,
+          "allocations": {
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_web_search": 100.0
+          }
+        },
+        {
+          "start": 31.638349461548568,
+          "end": 31.93834946154857,
+          "total": 100.0,
+          "allocations": {
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_web_search": 100.0
+          }
+        },
+        {
+          "start": 31.93834946154857,
+          "end": 31.93834946154857,
+          "total": 100.0,
+          "allocations": {
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_web_search": 100.0
+          }
+        },
+        {
+          "start": 31.93834946154857,
+          "end": 32.03834946154857,
+          "total": 100.0,
+          "allocations": {
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 50.0,
+            "ffd076fe-ad43-47f8-bfd5-9cfe9ca11017_web_search": 50.0
+          }
+        },
+        {
+          "start": 32.03834946154857,
+          "end": 32.03834946154857,
+          "total": 100.0,
+          "allocations": {
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 100.0
+          }
+        },
+        {
+          "start": 32.03834946154857,
+          "end": 32.039707439047895,
+          "total": 100.0,
+          "allocations": {
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 100.0
+          }
+        },
+        {
+          "start": 32.039707439047895,
+          "end": 32.33970743904789,
+          "total": 100.0,
+          "allocations": {
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 100.0
+          }
+        },
+        {
+          "start": 32.33970743904789,
+          "end": 32.33970743904789,
+          "total": 100.0,
+          "allocations": {
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 100.0
+          }
+        },
+        {
+          "start": 32.33970743904789,
+          "end": 32.444930284712406,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 50.0
+          }
+        },
+        {
+          "start": 32.444930284712406,
+          "end": 32.54493028471241,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 50.0
+          }
+        },
+        {
+          "start": 32.54493028471241,
+          "end": 32.594930284712405,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 50.0
+          }
+        },
+        {
+          "start": 32.594930284712405,
+          "end": 32.594930284712405,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 50.0
+          }
+        },
+        {
+          "start": 32.594930284712405,
+          "end": 32.66993028471241,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 33.333333333333336,
+            "ec3620b5-0a14-49c2-9a96-95483cec5261_web_search": 33.333333333333336,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 32.66993028471241,
+          "end": 32.66993028471241,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 50.0
+          }
+        },
+        {
+          "start": 32.66993028471241,
+          "end": 32.86993028471241,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 50.0
+          }
+        },
+        {
+          "start": 32.86993028471241,
+          "end": 33.17043774363336,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 50.0
+          }
+        },
+        {
+          "start": 33.17043774363336,
+          "end": 33.27043774363336,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 50.0
+          }
+        },
+        {
+          "start": 33.27043774363336,
+          "end": 33.27043774363336,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 50.0,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 50.0
+          }
+        },
+        {
+          "start": 33.27043774363336,
+          "end": 33.870437743633346,
+          "total": 100.0,
+          "allocations": {
+            "e9ad9170-155d-42ee-98fa-12a1aa0124ae_web_search": 33.333333333333336,
+            "e04af720-d328-448c-901d-45a25ef44aae_web_search": 33.333333333333336,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 33.870437743633346,
+          "end": 33.870437743633346,
+          "total": 100.0,
+          "allocations": {
+            "e04af720-d328-448c-901d-45a25ef44aae_web_search": 50.0,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 50.0
+          }
+        },
+        {
+          "start": 33.870437743633346,
+          "end": 34.07043774363335,
+          "total": 100.0,
+          "allocations": {
+            "e04af720-d328-448c-901d-45a25ef44aae_web_search": 50.0,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 50.0
+          }
+        },
+        {
+          "start": 34.07043774363335,
+          "end": 34.120437743633346,
+          "total": 100.0,
+          "allocations": {
+            "e04af720-d328-448c-901d-45a25ef44aae_web_search": 50.0,
+            "3c1eea32-a73d-4978-b25b-de65d42d9d17_web_search": 50.0
+          }
+        },
+        {
+          "start": 34.120437743633346,
+          "end": 34.120437743633346,
+          "total": 100.0,
+          "allocations": {
+            "e04af720-d328-448c-901d-45a25ef44aae_web_search": 100.0
+          }
+        },
+        {
+          "start": 34.120437743633346,
+          "end": 34.29543774363335,
+          "total": 100.0,
+          "allocations": {
+            "e04af720-d328-448c-901d-45a25ef44aae_web_search": 100.0
+          }
+        },
+        {
+          "start": 34.29543774363335,
+          "end": 34.29543774363335,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.29543774363335,
+          "end": 34.34543774363334,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.34543774363334,
+          "end": 34.520437743633344,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.520437743633344,
+          "end": 34.65829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.65829340535507,
+          "end": 34.75829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.75829340535507,
+          "end": 34.75829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 34.75829340535507,
+          "end": 35.25829340535507,
+          "total": 100.0,
+          "allocations": {
+            "2433eb2f-b21d-4e54-b4c1-5a2fbf9dec88_web_search": 100.0
+          }
+        },
+        {
+          "start": 35.25829340535507,
+          "end": 35.25829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.25829340535507,
+          "end": 35.45829340535507,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.45829340535507,
+          "end": 35.78936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.78936753891574,
+          "end": 35.88936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.88936753891574,
+          "end": 35.88936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 35.88936753891574,
+          "end": 36.38936753891574,
+          "total": 100.0,
+          "allocations": {
+            "745bbef8-8705-434c-b95a-7076fbb2424a_web_search": 100.0
+          }
+        },
+        {
+          "start": 36.38936753891574,
+          "end": 36.38936753891574,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.38936753891574,
+          "end": 36.477813524023624,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.477813524023624,
+          "end": 36.67781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.67781352402363,
+          "end": 36.67781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 36.67781352402363,
+          "end": 36.87781352402362,
+          "total": 100.0,
+          "allocations": {
+            "b9d9f780-b705-4fdc-a4fc-7205e0c003a9_web_search": 100.0
+          }
+        },
+        {
+          "start": 36.87781352402362,
+          "end": 37.17781352402363,
+          "total": 100.0,
+          "allocations": {
+            "b9d9f780-b705-4fdc-a4fc-7205e0c003a9_web_search": 100.0
+          }
+        },
+        {
+          "start": 37.17781352402363,
+          "end": 37.17781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 37.17781352402363,
+          "end": 37.37781352402363,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 37.37781352402363,
+          "end": 38.37055527182322,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.37055527182322,
+          "end": 38.47055527182322,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.47055527182322,
+          "end": 38.47055527182322,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 38.47055527182322,
+          "end": 38.6710243292779,
+          "total": 100.0,
+          "allocations": {
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 100.0
+          }
+        },
+        {
+          "start": 38.6710243292779,
+          "end": 38.7710243292779,
+          "total": 100.0,
+          "allocations": {
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 100.0
+          }
+        },
+        {
+          "start": 38.7710243292779,
+          "end": 38.7710243292779,
+          "total": 100.0,
+          "allocations": {
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 100.0
+          }
+        },
+        {
+          "start": 38.7710243292779,
+          "end": 39.362055353282706,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 50.0,
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 50.0
+          }
+        },
+        {
+          "start": 39.362055353282706,
+          "end": 39.46205535328271,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 50.0,
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 50.0
+          }
+        },
+        {
+          "start": 39.46205535328271,
+          "end": 39.46205535328271,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 50.0,
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 50.0
+          }
+        },
+        {
+          "start": 39.46205535328271,
+          "end": 40.2746097897244,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336,
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 40.2746097897244,
+          "end": 40.3746097897244,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336,
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 40.3746097897244,
+          "end": 40.3746097897244,
+          "total": 100.0,
+          "allocations": {
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336,
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 40.3746097897244,
+          "end": 41.274609789724416,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 25.0,
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 25.0,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 25.0,
+            "1aeb660e-8467-4908-bb2b-88c4abacfabe_web_search": 25.0
+          }
+        },
+        {
+          "start": 41.274609789724416,
+          "end": 41.274609789724416,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 33.333333333333336,
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 41.274609789724416,
+          "end": 41.47460978972442,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 33.333333333333336,
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 41.47460978972442,
+          "end": 41.49247916544395,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 33.333333333333336,
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 41.49247916544395,
+          "end": 41.592479165443955,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 33.333333333333336,
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 41.592479165443955,
+          "end": 41.592479165443955,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 33.333333333333336,
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 41.592479165443955,
+          "end": 41.79247916544394,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 25.0,
+            "48f6e767-fab6-404b-b88f-6d71b28d7911_web_search": 25.0,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 25.0,
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 25.0
+          }
+        },
+        {
+          "start": 41.79247916544394,
+          "end": 41.79247916544394,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336,
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 41.79247916544394,
+          "end": 41.992479165443946,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336,
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 41.992479165443946,
+          "end": 42.01747916544394,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 33.333333333333336,
+            "1a1d3716-9f66-47f4-bd68-3a335ed97da9_web_search": 33.333333333333336,
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 42.01747916544394,
+          "end": 42.01747916544394,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 50.0,
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 50.0
+          }
+        },
+        {
+          "start": 42.01747916544394,
+          "end": 42.11747916544394,
+          "total": 100.0,
+          "allocations": {
+            "f9451f6e-ee01-4873-9803-3db415510f72_web_search": 50.0,
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 50.0
+          }
+        },
+        {
+          "start": 42.11747916544394,
+          "end": 42.11747916544394,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 100.0
+          }
+        },
+        {
+          "start": 42.11747916544394,
+          "end": 42.317479165443935,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 100.0
+          }
+        },
+        {
+          "start": 42.317479165443935,
+          "end": 42.417479165443936,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 100.0
+          }
+        },
+        {
+          "start": 42.417479165443936,
+          "end": 42.44247916544394,
+          "total": 100.0,
+          "allocations": {
+            "cf799b52-d2b4-43d5-99e7-49efda3e51b3_web_search": 100.0
+          }
+        },
+        {
+          "start": 42.44247916544394,
+          "end": 42.44247916544394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.44247916544394,
+          "end": 42.60212654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.60212654635982,
+          "end": 42.90212654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 42.90212654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 42.90212654635982,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_literature_search": 100.0
+          }
+        },
+        {
+          "start": 42.90212654635982,
+          "end": 43.05212654635982,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_literature_search": 100.0
+          }
+        },
+        {
+          "start": 43.05212654635982,
+          "end": 43.90212654635982,
+          "total": 100.0,
+          "allocations": {
+            "a342cfba-c661-4114-af2e-b942fb53cd2d_literature_search": 100.0
+          }
+        },
+        {
+          "start": 43.90212654635982,
+          "end": 44.22712654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.22712654635982,
+          "end": 44.22712654635982,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.22712654635982,
+          "end": 44.39887320740394,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.39887320740394,
+          "end": 44.568351187505776,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.568351187505776,
+          "end": 44.86835118750577,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.86835118750577,
+          "end": 44.86835118750577,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 44.86835118750577,
+          "end": 45.01382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 100.0
+          }
+        },
+        {
+          "start": 45.01382291176316,
+          "end": 45.21382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 100.0
+          }
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.21382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 100.0
+          }
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.21382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 45.21382291176316,
+          "end": 45.413822911763155,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 45.413822911763155,
+          "end": 45.413822911763155,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 45.413822911763155,
+          "end": 46.01382291176316,
+          "total": 100.0,
+          "allocations": {
+            "a5d1da9c-a324-46cc-b5df-5d22b04e1b2f_web_search": 33.333333333333336,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 46.01382291176316,
+          "end": 46.01382291176316,
+          "total": 100.0,
+          "allocations": {
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 46.01382291176316,
+          "end": 46.16382291176316,
+          "total": 100.0,
+          "allocations": {
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 46.16382291176316,
+          "end": 46.45788122182941,
+          "total": 100.0,
+          "allocations": {
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 46.45788122182941,
+          "end": 46.75788122182941,
+          "total": 100.0,
+          "allocations": {
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 46.75788122182941,
+          "end": 46.75788122182941,
+          "total": 100.0,
+          "allocations": {
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 46.75788122182941,
+          "end": 46.907881221829406,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 33.333333333333336,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 46.907881221829406,
+          "end": 46.9828812218294,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 33.333333333333336,
+            "29a719a9-bc01-4829-bdde-2b1fca89c2e7_web_search": 33.333333333333336,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 46.9828812218294,
+          "end": 46.9828812218294,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 46.9828812218294,
+          "end": 47.3828812218294,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 47.3828812218294,
+          "end": 47.50788122182941,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 47.50788122182941,
+          "end": 47.782881221829406,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 50.0,
+            "648ccf52-14f9-48e1-99c5-72fd0b998776_literature_search": 50.0
+          }
+        },
+        {
+          "start": 47.782881221829406,
+          "end": 47.782881221829406,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 100.0
+          }
+        },
+        {
+          "start": 47.782881221829406,
+          "end": 47.807881221829405,
+          "total": 100.0,
+          "allocations": {
+            "ff201a56-5ef4-4b9f-91db-70aa06dcbcf3_web_search": 100.0
+          }
+        },
+        {
+          "start": 47.807881221829405,
+          "end": 47.807881221829405,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 47.807881221829405,
+          "end": 48.2078812218294,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.2078812218294,
+          "end": 48.252890664448934,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.252890664448934,
+          "end": 48.34801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.34801836396175,
+          "end": 48.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.64801836396175,
+          "total": 100.0,
+          "allocations": {
+            "be3d4aaf-28b9-4b22-a479-25b03d1f00fd_web_search": 100.0
+          }
+        },
+        {
+          "start": 48.64801836396175,
+          "end": 48.873018363961755,
+          "total": 100.0,
+          "allocations": {
+            "1c2dbe4f-d410-43c0-afa4-efd3f84e78ab_web_search": 50.0,
+            "be3d4aaf-28b9-4b22-a479-25b03d1f00fd_web_search": 50.0
+          }
+        },
+        {
+          "start": 48.873018363961755,
+          "end": 49.64801836396175,
+          "total": 100.0,
+          "allocations": {
+            "1c2dbe4f-d410-43c0-afa4-efd3f84e78ab_web_search": 50.0,
+            "be3d4aaf-28b9-4b22-a479-25b03d1f00fd_web_search": 50.0
+          }
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 49.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 49.64801836396175,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 49.64801836396175,
+          "end": 50.048018363961745,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.048018363961745,
+          "end": 50.21868440526097,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.21868440526097,
+          "end": 50.318684405260974,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.318684405260974,
+          "end": 50.318684405260974,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 50.318684405260974,
+          "end": 50.5926069092158,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 100.0
+          }
+        },
+        {
+          "start": 50.5926069092158,
+          "end": 50.692606909215804,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 100.0
+          }
+        },
+        {
+          "start": 50.692606909215804,
+          "end": 50.692606909215804,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 100.0
+          }
+        },
+        {
+          "start": 50.692606909215804,
+          "end": 50.72713477097441,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 50.0,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 50.0
+          }
+        },
+        {
+          "start": 50.72713477097441,
+          "end": 50.91640799879382,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 50.0,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 50.0
+          }
+        },
+        {
+          "start": 50.91640799879382,
+          "end": 51.016407998793824,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 50.0,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 50.0
+          }
+        },
+        {
+          "start": 51.016407998793824,
+          "end": 51.016407998793824,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 50.0,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 50.0
+          }
+        },
+        {
+          "start": 51.016407998793824,
+          "end": 51.21640799879382,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 33.333333333333336,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 33.333333333333336,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.21640799879382,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 33.333333333333336,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 33.333333333333336,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.21640799879382,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 25.0,
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 25.0,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 25.0,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 25.0
+          }
+        },
+        {
+          "start": 51.21640799879382,
+          "end": 51.94974133212716,
+          "total": 100.0,
+          "allocations": {
+            "d227482a-0d3f-4404-be8d-594ca29f57d8_web_search": 25.0,
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 25.0,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 25.0,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 25.0
+          }
+        },
+        {
+          "start": 51.94974133212716,
+          "end": 51.94974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 33.333333333333336,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 33.333333333333336,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 51.94974133212716,
+          "end": 52.34974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 33.333333333333336,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 33.333333333333336,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 52.34974133212716,
+          "end": 52.39974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 33.333333333333336,
+            "e04609dc-a85a-4a41-b900-e10db49d6477_web_search": 33.333333333333336,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 33.333333333333336
+          }
+        },
+        {
+          "start": 52.39974133212716,
+          "end": 52.39974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 50.0,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 50.0
+          }
+        },
+        {
+          "start": 52.39974133212716,
+          "end": 52.59974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 50.0,
+            "bd8e03b8-3840-4737-b33b-c90272d48fe4_web_search": 50.0
+          }
+        },
+        {
+          "start": 52.59974133212716,
+          "end": 52.59974133212716,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 52.59974133212716,
+          "end": 52.84974133212715,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 52.84974133212715,
+          "end": 52.88307466546049,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 52.88307466546049,
+          "end": 52.98307466546049,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 52.98307466546049,
+          "end": 53.15768748873956,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 53.15768748873956,
+          "end": 53.30768748873956,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.30768748873956,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 100.0
+          }
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.30768748873956,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 50.0,
+            "92a4d2d0-919f-4b91-936e-325f112e1180_literature_search": 50.0
+          }
+        },
+        {
+          "start": 53.30768748873956,
+          "end": 53.37435415540622,
+          "total": 100.0,
+          "allocations": {
+            "a1632576-10b6-4926-8bf9-5650667002d9_literature_search": 50.0,
+            "92a4d2d0-919f-4b91-936e-325f112e1180_literature_search": 50.0
+          }
+        },
+        {
+          "start": 53.37435415540622,
+          "end": 53.37435415540622,
+          "total": 100.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_literature_search": 100.0
+          }
+        },
+        {
+          "start": 53.37435415540622,
+          "end": 54.34102082207289,
+          "total": 100.0,
+          "allocations": {
+            "92a4d2d0-919f-4b91-936e-325f112e1180_literature_search": 100.0
+          }
+        },
+        {
+          "start": 54.34102082207289,
+          "end": 54.49657637762844,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 54.49657637762844,
+          "end": 54.86324304429511,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 54.86324304429511,
+          "end": 54.86324304429511,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 54.86324304429511,
+          "end": 55.26324304429511,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 55.26324304429511,
+          "end": 56.67451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 56.67451035798827,
+          "end": 56.77451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 56.77451035798827,
+          "end": 56.77451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 56.77451035798827,
+          "end": 57.27451035798827,
+          "total": 100.0,
+          "allocations": {
+            "becfcda9-76db-46c9-bc12-19790996b3a7_web_search": 100.0
+          }
+        },
+        {
+          "start": 57.27451035798827,
+          "end": 57.27451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.27451035798827,
+          "end": 57.47451035798827,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.47451035798827,
+          "end": 57.562352864194935,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.562352864194935,
+          "end": 57.71235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 57.71235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 57.71235286419493,
+          "total": 100.0,
+          "allocations": {
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_literature_search": 100.0
+          }
+        },
+        {
+          "start": 57.71235286419493,
+          "end": 58.71235286419493,
+          "total": 100.0,
+          "allocations": {
+            "e6df7e46-9e47-4673-8207-28e2ccc33e01_literature_search": 100.0
+          }
+        },
+        {
+          "start": 58.71235286419493,
+          "end": 59.01235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 59.01235286419493,
+          "end": 59.01235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 59.01235286419493,
+          "end": 59.41235286419493,
+          "total": 0.0,
+          "allocations": {}
+        },
+        {
+          "start": 59.41235286419493,
+          "end": 59.41235286419493,
+          "total": 0.0,
+          "allocations": {}
+        }
+      ]
+    },
+    {
+      "type": "disk",
+      "timeline": []
+    }
+  ]
+}

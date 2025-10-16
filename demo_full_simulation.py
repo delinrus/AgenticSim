@@ -209,6 +209,19 @@ def main():
     print(f"Active tools at end: {len(engine.active_tools)}")
     print(f"Total simulation steps: {engine.total_steps}")
     print("="*80)
+    
+    # Export resource timeline
+    print("\n9. Exporting resource allocation timeline...")
+    import json
+    timeline_data = metrics.export_resource_timeline()
+    output_file = "full_simulation_timeline.json"
+    with open(output_file, 'w') as f:
+        json.dump(timeline_data, f, indent=2)
+    print(f"   Timeline exported to: {output_file}")
+    print(f"   Total timeline intervals:")
+    for resource in timeline_data['resources']:
+        print(f"     - {resource['type'].upper()}: {len(resource['timeline'])} intervals")
+    print()
 
 
 if __name__ == '__main__':

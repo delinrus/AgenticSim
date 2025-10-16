@@ -122,6 +122,10 @@ class SimulationEngine:
                 self.metrics.snapshot(self.current_time, self.active_tools, self.resource_manager)
             
             self.total_steps += 1
+        
+        # Finalize timeline when simulation ends
+        if self.metrics is not None:
+            self.metrics.finalize_timeline(self.current_time)
     
     def _update_resource_shares(self) -> None:
         """
@@ -154,6 +158,10 @@ class SimulationEngine:
             non_consumers = self.active_tools - set(consumers)
             for tool in non_consumers:
                 tool.current_share[resource_type] = 0.0
+        
+        # Record resource allocation timeline for visualization
+        if self.metrics is not None:
+            self.metrics.record_resource_allocation(self.current_time, self.active_tools)
     
     def _find_next_completion(self) -> Tuple[float, Optional[ToolInstance], Optional[ResourceType]]:
         """

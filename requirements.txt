@@ -1,0 +1,5 @@
+networkx>=3.0
+matplotlib>=3.5
+numpy>=1.21
+pyyaml>=6.0
+

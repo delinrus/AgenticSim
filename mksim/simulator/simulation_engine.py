@@ -98,7 +98,6 @@ class SimulationEngine:
             next_time = min(next_start_time, next_completion_time)
             
             if next_time == float('inf'):
-                next_completion_time, completing_tool, completing_resource = self._find_next_completion()
                 # No more events
                 break
             
@@ -117,10 +116,10 @@ class SimulationEngine:
                 elif event.event_type == EventType.TOOL_START:
                     self._handle_tool_start(event)
             else:
-                # Handle resource completion
+                # Handle resource completion(s)
                 time_delta = next_completion_time - self.current_time
                 self.current_time = next_completion_time
-                self._handle_resource_completion(completing_tool, completing_resource, time_delta)
+                self._handle_resource_completion(time_delta)
             
             # Take metrics snapshot if collector is available
             if self.metrics is not None:
@@ -231,24 +230,20 @@ class SimulationEngine:
         if request.start_time is None:
             request.start_time = self.current_time
     
-    def _handle_resource_completion(self, 
-                                    tool: ToolInstance, 
-                                    resource: ResourceType, 
-                                    time_delta: float) -> None:
+    def _handle_resource_completion(self, time_delta: float) -> None:
         """
-        Handle completion of work on a resource.
+        Handle completion of work progress over a time delta and finalize
+        all tools that completed at the current timestamp.
         
         Updates remaining_work for ALL active tools (time advanced by time_delta).
-        If tool completes all work, marks as COMPLETED and checks dependencies.
+        Any tools that reach zero remaining work are marked COMPLETED and their
+        dependents are considered for start.
         
         Args:
-            tool: Tool that completed work on resource
-            resource: Resource type that was completed
             time_delta: Time elapsed since last event
         """
-        # Update remaining_work for ALL active tools
-        # (all tools made progress during time_delta)
-        
+        # Update remaining_work for ALL active tools (all made progress)
+
         # First, compute fair shares
         resource_consumers = defaultdict(set)
         for active_tool in self.active_tools:
@@ -270,13 +265,19 @@ class SimulationEngine:
                     
                     # Update remaining (cannot be negative)
                     active_tool.remaining_work[r] = max(0.0, active_tool.remaining_work[r] - work_done)
-        
-        # Check if tool completed all work
-        if tool.is_completed():
+
+        # Identify all tools that have completed at this timestamp
+        finished_tools: list[ToolInstance] = [
+            t for t in list(self.active_tools) if t.is_completed()
+        ]
+
+        # Finalize all finished tools
+        for tool in finished_tools:
             tool.status = ToolStatus.COMPLETED
             tool.finish_time = self.current_time
-            self.active_tools.remove(tool)
-            
+            # Safe removal after iteration
+            if tool in self.active_tools:
+                self.active_tools.remove(tool)
             # Check dependencies and start dependent tools
             self._check_and_start_dependents(tool)
     

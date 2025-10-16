@@ -11,6 +11,7 @@ from typing import Dict, Optional
 from uuid import UUID
 
 from mksim.agentic.tool.tools import AgenticTool
+from mksim.common.constants import EPSILON
 
 
 class ToolStatus(Enum):
@@ -107,7 +108,7 @@ class ToolInstance:
         else:
             return 0.0
     
-    def is_completed(self, epsilon: float = 1e-9) -> bool:
+    def is_completed(self, epsilon: float = EPSILON) -> bool:
         """
         Check if tool has completed all work.
         
@@ -119,7 +120,7 @@ class ToolInstance:
         """
         return all(work <= epsilon for work in self.remaining_work.values())
     
-    def has_work_on_resource(self, resource_type: ResourceType, epsilon: float = 1e-9) -> bool:
+    def has_work_on_resource(self, resource_type: ResourceType, epsilon: float = EPSILON) -> bool:
         """
         Check if tool still has work remaining on a resource.
         

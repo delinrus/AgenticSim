@@ -173,10 +173,9 @@ class SimulationEngine:
         # For each tool and resource, compute completion time
         for tool in self.active_tools:
             for resource_type in ResourceType:
-                remaining = tool.remaining_work[resource_type]
-                
-                if remaining <= 1e-9:  # epsilon
+                if not tool.has_work_on_resource(resource_type):
                     continue
+                remaining = tool.remaining_work[resource_type]
                 
                 share = resource_shares[resource_type]
                 if share <= 0:
@@ -279,7 +278,7 @@ class SimulationEngine:
 
         # Identify all tools that have completed at this timestamp
         finished_tools: list[ToolInstance] = [
-            t for t in list(self.active_tools) if t.is_completed()
+            tool for tool in list(self.active_tools) if tool.is_completed()
         ]
 
         # Finalize all finished tools

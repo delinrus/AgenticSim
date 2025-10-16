@@ -127,6 +127,32 @@ class SimulationEngine:
             
             self.total_steps += 1
     
+    def _compute_resource_shares(self) -> Dict[ResourceType, float]:
+        """
+        Compute fair share for each resource based on active consumers.
+        
+        Returns:
+            Dict mapping ResourceType to share (capacity / num_consumers)
+        """
+        # Count consumers for each resource
+        resource_consumers = defaultdict(int)
+        for tool in self.active_tools:
+            for resource_type in ResourceType:
+                if tool.has_work_on_resource(resource_type):
+                    resource_consumers[resource_type] += 1
+        
+        # Compute fair share for each resource
+        shares = {}
+        for resource_type in ResourceType:
+            num_consumers = resource_consumers[resource_type]
+            if num_consumers > 0:
+                capacity = self.resource_manager.get_capacity(resource_type)
+                shares[resource_type] = capacity / num_consumers
+            else:
+                shares[resource_type] = 0.0
+        
+        return shares
+    
     def _find_next_completion(self) -> Tuple[float, Optional[ToolInstance], Optional[ResourceType]]:
         """
         Find the next resource completion among active tools.
@@ -141,12 +167,8 @@ class SimulationEngine:
         completing_tool = None
         completing_resource = None
         
-        # Count consumers for each resource (for fair-share calculation)
-        resource_consumers = defaultdict(set)
-        for tool in self.active_tools:
-            for resource_type in ResourceType:
-                if tool.has_work_on_resource(resource_type):
-                    resource_consumers[resource_type].add(tool.tool_id)
+        # Compute fair shares for all resources
+        resource_shares = self._compute_resource_shares()
         
         # For each tool and resource, compute completion time
         for tool in self.active_tools:
@@ -156,13 +178,9 @@ class SimulationEngine:
                 if remaining <= 1e-9:  # epsilon
                     continue
                 
-                # Fair share for this resource
-                num_consumers = len(resource_consumers[resource_type])
-                if num_consumers == 0:
+                share = resource_shares[resource_type]
+                if share <= 0:
                     continue
-                
-                capacity = self.resource_manager.get_capacity(resource_type)
-                share = capacity / num_consumers
                 
                 # Time to complete work on this resource
                 completion_time = self.current_time + (remaining / share)
@@ -242,29 +260,22 @@ class SimulationEngine:
         Args:
             time_delta: Time elapsed since last event
         """
-        # Update remaining_work for ALL active tools (all made progress)
-
-        # First, compute fair shares
-        resource_consumers = defaultdict(set)
-        for active_tool in self.active_tools:
-            for r in ResourceType:
-                if active_tool.has_work_on_resource(r):
-                    resource_consumers[r].add(active_tool.tool_id)
+        # Compute fair shares for all resources
+        resource_shares = self._compute_resource_shares()
         
         # Update each active tool's remaining work
         for active_tool in self.active_tools:
-            for r in ResourceType:
-                if active_tool.has_work_on_resource(r):
-                    # Compute fair share
-                    num_consumers = len(resource_consumers[r])
-                    capacity = self.resource_manager.get_capacity(r)
-                    share = capacity / num_consumers
+            for resource_type in ResourceType:
+                if active_tool.has_work_on_resource(resource_type):
+                    share = resource_shares[resource_type]
                     
                     # Work done = share × time_delta
                     work_done = share * time_delta
                     
                     # Update remaining (cannot be negative)
-                    active_tool.remaining_work[r] = max(0.0, active_tool.remaining_work[r] - work_done)
+                    active_tool.remaining_work[resource_type] = max(
+                        0.0, active_tool.remaining_work[resource_type] - work_done
+                    )
 
         # Identify all tools that have completed at this timestamp
         finished_tools: list[ToolInstance] = [

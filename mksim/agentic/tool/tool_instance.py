@@ -59,6 +59,9 @@ class ToolInstance:
     # Remaining work per resource (initialized when tool starts)
     remaining_work: Dict[ResourceType, float] = field(default_factory=dict, compare=False, hash=False)
     
+    # Current fair-share allocation per resource (updated by simulation engine)
+    current_share: Dict[ResourceType, float] = field(default_factory=dict, compare=False, hash=False)
+    
     def __hash__(self):
         """Make ToolInstance hashable based on tool_id."""
         return hash(self.tool_id)
@@ -70,9 +73,11 @@ class ToolInstance:
         return self.tool_id == other.tool_id
     
     def __post_init__(self):
-        """Initialize remaining_work to zero for all resources."""
+        """Initialize remaining_work and current_share to zero for all resources."""
         if not self.remaining_work:
             self.remaining_work = {resource_type: 0.0 for resource_type in ResourceType}
+        if not self.current_share:
+            self.current_share = {resource_type: 0.0 for resource_type in ResourceType}
     
     def initialize_work(self) -> None:
         """

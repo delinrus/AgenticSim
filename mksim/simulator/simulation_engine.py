@@ -123,31 +123,37 @@ class SimulationEngine:
             
             self.total_steps += 1
     
-    def _compute_resource_shares(self) -> Dict[ResourceType, float]:
+    def _update_resource_shares(self) -> None:
         """
-        Compute fair share for each resource based on active consumers.
+        Update current_share for all active tools based on fair-share allocation.
         
-        Returns:
-            Dict mapping ResourceType to share (capacity / num_consumers)
+        This method should be called whenever the set of active tools changes
+        (tool starts or completes).
         """
         # Count consumers for each resource
-        resource_consumers = defaultdict(int)
+        resource_consumers = defaultdict(list)
         for tool in self.active_tools:
             for resource_type in ResourceType:
                 if tool.has_work_on_resource(resource_type):
-                    resource_consumers[resource_type] += 1
+                    resource_consumers[resource_type].append(tool)
         
-        # Compute fair share for each resource
-        shares = {}
+        # Compute and assign fair share for each resource
         for resource_type in ResourceType:
-            num_consumers = resource_consumers[resource_type]
+            consumers = resource_consumers[resource_type]
+            num_consumers = len(consumers)
+            
             if num_consumers > 0:
                 capacity = self.resource_manager.get_capacity(resource_type)
-                shares[resource_type] = capacity / num_consumers
-            else:
-                shares[resource_type] = 0.0
-        
-        return shares
+                share = capacity / num_consumers
+                
+                # Assign share to each consumer
+                for tool in consumers:
+                    tool.current_share[resource_type] = share
+            
+            # Set share to 0 for tools not consuming this resource
+            non_consumers = self.active_tools - set(consumers)
+            for tool in non_consumers:
+                tool.current_share[resource_type] = 0.0
     
     def _find_next_completion(self) -> Tuple[float, Optional[ToolInstance], Optional[ResourceType]]:
         """
@@ -163,17 +169,16 @@ class SimulationEngine:
         completing_tool = None
         completing_resource = None
         
-        # Compute fair shares for all resources
-        resource_shares = self._compute_resource_shares()
-        
-        # For each tool and resource, compute completion time
+        # For each tool and resource, compute completion time using pre-computed shares
         for tool in self.active_tools:
             for resource_type in ResourceType:
                 if not tool.has_work_on_resource(resource_type):
                     continue
-                remaining = tool.remaining_work[resource_type]
                 
-                share = resource_shares[resource_type]
+                remaining = tool.remaining_work[resource_type]
+                # Use pre-computed fair share from tool instance
+                share = tool.current_share[resource_type]
+                
                 if share <= 0:
                     continue
                 
@@ -212,6 +217,9 @@ class SimulationEngine:
         
         # Add to active tools
         self.active_tools.add(tool)
+        
+        # Update resource shares for all active tools
+        self._update_resource_shares()
     
     def _handle_resource_completion(self, time_delta: float) -> None:
         """
@@ -225,14 +233,12 @@ class SimulationEngine:
         Args:
             time_delta: Time elapsed since last event
         """
-        # Compute fair shares for all resources
-        resource_shares = self._compute_resource_shares()
-        
-        # Update each active tool's remaining work
+        # Update each active tool's remaining work using their current share
         for active_tool in self.active_tools:
             for resource_type in ResourceType:
                 if active_tool.has_work_on_resource(resource_type):
-                    share = resource_shares[resource_type]
+                    # Use pre-computed fair share from tool instance
+                    share = active_tool.current_share[resource_type]
                     
                     # Work done = share × time_delta
                     work_done = share * time_delta
@@ -256,6 +262,10 @@ class SimulationEngine:
                 self.active_tools.remove(tool)
             # Check dependencies and start dependent tools
             self._check_and_start_dependents(tool)
+        
+        # Update resource shares after removing completed tools
+        if finished_tools:
+            self._update_resource_shares()
     
     def _check_and_start_dependents(self, finished_tool: ToolInstance) -> None:
         """

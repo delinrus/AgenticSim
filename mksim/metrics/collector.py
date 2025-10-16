@@ -66,25 +66,34 @@ class MetricsCollector:
             active_tools: Set of currently running tools
             resource_manager: Resource manager
         """
-        # Count consumers per resource
-        resource_consumers = defaultdict(int)
-        for tool in active_tools:
-            for resource_type in ResourceType:
-                if tool.has_work_on_resource(resource_type):
-                    resource_consumers[resource_type] += 1
-        
-        # Compute utilization for each resource
+        # Compute actual resource consumption and utilization
         utilization = {}
+        resource_consumers = defaultdict(int)
+        
+        # Calculate utilization using pre-computed shares from tool instances
         for resource_type in ResourceType:
             capacity = resource_manager.get_capacity(resource_type)
-            consumers = resource_consumers[resource_type]
             
-            # In fair-share, if N consumers, each gets capacity/N
-            # So total allocated = N * (capacity/N) = capacity (if N > 0)
-            # Utilization = min(1.0, consumers / 1.0) if consumers use full share
-            # Actually, utilization = 1.0 if consumers > 0, else 0.0
-            # (assuming all active tools fully utilize their share)
-            utilization[resource_type.value] = 1.0 if consumers > 0 else 0.0
+            if capacity == 0:
+                utilization[resource_type.value] = 0.0
+                continue
+            
+            # Sum actual consumption from all active tools
+            # Each tool's consumption is stored in tool.current_share[resource_type]
+            total_consumption = sum(
+                tool.current_share[resource_type]
+                for tool in active_tools
+                if tool.has_work_on_resource(resource_type)
+            )
+            
+            # Count consumers for tracking
+            num_consumers = sum(
+                1 for tool in active_tools
+                if tool.has_work_on_resource(resource_type)
+            )
+            resource_consumers[resource_type] = num_consumers
+            
+            utilization[resource_type.value] = total_consumption / capacity
         
         self.utilization_snapshots.append({
             'time': current_time,

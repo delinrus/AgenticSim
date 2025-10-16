@@ -70,7 +70,8 @@ class Request:
                 tool_id=tool_id,
                 tool_name=tool_name,
                 request_id=request_id,
-                tool_template=tool_template
+                tool_template=tool_template,
+                request=request
             )
             request.tool_instances[tool_name] = tool_instance
         

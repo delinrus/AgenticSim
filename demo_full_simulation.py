@@ -158,9 +158,19 @@ def main():
         simulation_duration=simulation_duration
     )
     
-    print(f"   Generated {len(arrival_events)} total arrivals:")
-    web_search_count = sum(1 for e in arrival_events if e.payload['request'].request_type == 'web-search')
-    deep_research_count = sum(1 for e in arrival_events if e.payload['request'].request_type == 'deep-research')
+    print(f"   Generated {len(arrival_events)} tool start events")
+    
+    # Count unique requests by type
+    unique_requests = {}
+    for e in arrival_events:
+        req = e.tool_instance.request
+        if req.request_id not in unique_requests:
+            unique_requests[req.request_id] = req.request_type
+    
+    web_search_count = sum(1 for rt in unique_requests.values() if rt == 'web-search')
+    deep_research_count = sum(1 for rt in unique_requests.values() if rt == 'deep-research')
+    
+    print(f"   Total unique requests: {len(unique_requests)}")
     print(f"   - Web Search: {web_search_count} requests")
     print(f"   - Deep Research: {deep_research_count} requests")
     

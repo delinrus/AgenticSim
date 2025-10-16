@@ -9,7 +9,7 @@ from collections import defaultdict
 from typing import Dict, Set, Tuple, Optional
 from uuid import UUID
 
-from mksim.simulator.event import EventQueue, Event, EventType
+from mksim.simulator.event import EventQueue, Event
 from mksim.simulator.resource import ResourceManager
 from mksim.agentic.request.request import Request
 from mksim.agentic.tool.tool_instance import ToolInstance, ToolStatus, ResourceType
@@ -107,14 +107,10 @@ class SimulationEngine:
             
             # Process event
             if next_time == next_start_time:
-                # Handle START event
+                # Handle tool start event
                 event = self.event_queue.pop()
                 self.current_time = event.timestamp
-                
-                if event.event_type == EventType.REQUEST_ARRIVAL:
-                    self._handle_request_arrival(event)
-                elif event.event_type == EventType.TOOL_START:
-                    self._handle_tool_start(event)
+                self._handle_tool_start(event)
             else:
                 # Handle resource completion(s)
                 time_delta = next_completion_time - self.current_time
@@ -191,48 +187,23 @@ class SimulationEngine:
         
         return min_completion_time, completing_tool, completing_resource
     
-    def _handle_request_arrival(self, event: Event) -> None:
-        """
-        Handle REQUEST_ARRIVAL event.
-        
-        Creates tool instances and schedules START events for root tools.
-        
-        Args:
-            event: REQUEST_ARRIVAL event with payload {'request': Request}
-        """
-        request = event.payload['request']
-        self.requests[request.request_id] = request
-        
-        # Find root tools (no dependencies)
-        root_tools = request.get_root_tools()
-        
-        # Schedule START events for root tools
-        for tool_name in root_tools:
-            tool_instance = request.tool_instances[tool_name]
-            start_event = Event(
-                timestamp=self.current_time,
-                event_type=EventType.TOOL_START,
-                payload={'tool_id': tool_instance.tool_id}
-            )
-            self.schedule_event(start_event)
-    
     def _handle_tool_start(self, event: Event) -> None:
         """
-        Handle TOOL_START event.
+        Handle tool start event.
         
-        Marks tool as RUNNING, initializes remaining_work, adds to active_tools.
+        Registers request (if new), marks tool as RUNNING, initializes remaining_work.
         
         Args:
-            event: TOOL_START event with payload {'tool_id': str}
+            event: Event with tool_instance
         """
-        tool_id = event.payload['tool_id']
+        tool = event.tool_instance
         
-        # Find tool instance
-        tool = self._find_tool_by_id(tool_id)
-        if tool is None:
-            raise ValueError(f"Tool {tool_id} not found in any request")
+        # Register request if this is the first time we see it
+        if tool.request and tool.request.request_id not in self.requests:
+            self.requests[tool.request.request_id] = tool.request
+            tool.request.start_time = self.current_time
         
-        # Update status and timing
+        # Update tool status and timing
         tool.status = ToolStatus.RUNNING
         tool.start_time = self.current_time
         
@@ -241,11 +212,6 @@ class SimulationEngine:
         
         # Add to active tools
         self.active_tools.add(tool)
-        
-        # Update request start_time if this is the first tool
-        request = self.requests[tool.request_id]
-        if request.start_time is None:
-            request.start_time = self.current_time
     
     def _handle_resource_completion(self, time_delta: float) -> None:
         """
@@ -295,13 +261,15 @@ class SimulationEngine:
         """
         Check if any tools can start now that finished_tool is done.
         
-        Schedules TOOL_START events for tools whose dependencies are all completed.
+        Schedules START events for tools whose dependencies are all completed.
         Also checks if entire request is completed.
         
         Args:
             finished_tool: Tool that just completed
         """
-        request = self.requests[finished_tool.request_id]
+        request = finished_tool.request
+        if not request:
+            return
         
         # Find dependent tools
         dependent_names = request.get_dependents(finished_tool.tool_name)
@@ -314,8 +282,7 @@ class SimulationEngine:
                 # Schedule START event
                 start_event = Event(
                     timestamp=self.current_time,
-                    event_type=EventType.TOOL_START,
-                    payload={'tool_id': dependent_tool.tool_id}
+                    tool_instance=dependent_tool
                 )
                 self.schedule_event(start_event)
         
@@ -328,31 +295,6 @@ class SimulationEngine:
             if self.metrics is not None:
                 self.metrics.record_request_latency(request)
     
-    def _find_tool_by_id(self, tool_id: str) -> Optional[ToolInstance]:
-        """
-        Find a tool instance by its ID.
-        
-        Args:
-            tool_id: Tool ID (format: "{request_id}_{tool_name}")
-            
-        Returns:
-            ToolInstance or None if not found
-        """
-        # Extract request_id from tool_id
-        parts = tool_id.split('_', 1)
-        if len(parts) < 2:
-            return None
-        
-        request_id_str = parts[0]
-        
-        # Find in requests
-        for request in self.requests.values():
-            if str(request.request_id).startswith(request_id_str):
-                for tool in request.tool_instances.values():
-                    if tool.tool_id == tool_id:
-                        return tool
-        
-        return None
     
     def get_statistics(self) -> Dict:
         """

@@ -5,7 +5,7 @@ Demo script to test basic simulation functionality.
 import networkx as nx
 from mksim.simulator.simulation_engine import SimulationEngine
 from mksim.simulator.resource import ResourceManager
-from mksim.simulator.event import Event, EventType
+from mksim.simulator.event import Event
 from mksim.agentic.tool.tool_instance import ResourceType
 from mksim.agentic.request.request import Request
 from mksim.agentic.tool.tools import AgenticTool
@@ -72,13 +72,15 @@ def test_single_tool():
     # Create engine
     engine = SimulationEngine(resource_manager)
     
-    # Schedule request arrival
-    arrival_event = Event(
-        timestamp=0.0,
-        event_type=EventType.REQUEST_ARRIVAL,
-        payload={'request': request}
-    )
-    engine.schedule_event(arrival_event)
+    # Schedule root tool starts
+    root_tools = request.get_root_tools()
+    for tool_name in root_tools:
+        tool_instance = request.tool_instances[tool_name]
+        start_event = Event(
+            timestamp=0.0,
+            tool_instance=tool_instance
+        )
+        engine.schedule_event(start_event)
     
     # Run simulation
     print(f"Running simulation...")
@@ -130,12 +132,16 @@ def test_sequential_tools():
     
     # Create engine and run
     engine = SimulationEngine(resource_manager)
-    arrival_event = Event(
-        timestamp=0.0,
-        event_type=EventType.REQUEST_ARRIVAL,
-        payload={'request': request}
-    )
-    engine.schedule_event(arrival_event)
+    
+    # Schedule root tool starts
+    root_tools = request.get_root_tools()
+    for tool_name in root_tools:
+        tool_instance = request.tool_instances[tool_name]
+        start_event = Event(
+            timestamp=0.0,
+            tool_instance=tool_instance
+        )
+        engine.schedule_event(start_event)
     
     print(f"Running simulation...")
     engine.run(until=10.0)
@@ -192,12 +198,16 @@ def test_fair_share():
     
     # Create engine and run
     engine = SimulationEngine(resource_manager)
-    arrival_event = Event(
-        timestamp=0.0,
-        event_type=EventType.REQUEST_ARRIVAL,
-        payload={'request': request}
-    )
-    engine.schedule_event(arrival_event)
+    
+    # Schedule root tool starts
+    root_tools = request.get_root_tools()
+    for tool_name in root_tools:
+        tool_instance = request.tool_instances[tool_name]
+        start_event = Event(
+            timestamp=0.0,
+            tool_instance=tool_instance
+        )
+        engine.schedule_event(start_event)
     
     print(f"Running simulation...")
     print(f"Tool A needs: CPU=100, Network=50")

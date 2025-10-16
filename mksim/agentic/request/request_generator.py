@@ -6,7 +6,7 @@ import numpy as np
 from typing import List, Dict, Optional
 from uuid import uuid4
 
-from mksim.simulator.event import Event, EventType
+from mksim.simulator.event import Event
 from mksim.agentic.request.request import Request
 from utils.agentic_tool_graph import AgenticToolGraph
 
@@ -66,7 +66,7 @@ class RequestGenerator:
                                 simulation_duration: float,
                                 start_time: float = 0.0) -> List[Event]:
         """
-        Generate REQUEST_ARRIVAL events for a single request type.
+        Generate tool start events for root tools of each request.
         
         Args:
             request_type: Type/class of request
@@ -76,7 +76,7 @@ class RequestGenerator:
             start_time: Start time offset (seconds)
             
         Returns:
-            List of REQUEST_ARRIVAL events
+            List of tool start events (for root tools)
         """
         arrival_times = self.generate_poisson_arrivals(
             lambda_per_min=lambda_per_min,
@@ -94,13 +94,15 @@ class RequestGenerator:
                 request_id=uuid4()
             )
             
-            # Create arrival event
-            event = Event(
-                timestamp=arrival_time,
-                event_type=EventType.REQUEST_ARRIVAL,
-                payload={'request': request}
-            )
-            events.append(event)
+            # Create events for root tools (tools with no dependencies)
+            root_tools = request.get_root_tools()
+            for tool_name in root_tools:
+                tool_instance = request.tool_instances[tool_name]
+                event = Event(
+                    timestamp=arrival_time,
+                    tool_instance=tool_instance
+                )
+                events.append(event)
         
         return events
     
@@ -109,7 +111,7 @@ class RequestGenerator:
                                 simulation_duration: float,
                                 start_time: float = 0.0) -> List[Event]:
         """
-        Generate REQUEST_ARRIVAL events for multiple request types (mixed workload).
+        Generate tool start events for multiple request types (mixed workload).
         
         Args:
             workload_specs: List of workload specifications, each containing:
@@ -120,7 +122,7 @@ class RequestGenerator:
             start_time: Start time offset (seconds)
             
         Returns:
-            List of REQUEST_ARRIVAL events (sorted by timestamp)
+            List of tool start events (sorted by timestamp)
             
         Example:
             workload_specs = [
@@ -164,7 +166,7 @@ class RequestGenerator:
                                        inter_arrival_time: float,
                                        start_time: float = 0.0) -> List[Event]:
         """
-        Generate REQUEST_ARRIVAL events with deterministic (fixed) inter-arrival time.
+        Generate tool start events with deterministic (fixed) inter-arrival time.
         
         Useful for controlled experiments and validation.
         
@@ -176,7 +178,7 @@ class RequestGenerator:
             start_time: Start time offset (seconds)
             
         Returns:
-            List of REQUEST_ARRIVAL events
+            List of tool start events (for root tools)
         """
         events = []
         
@@ -191,13 +193,15 @@ class RequestGenerator:
                 request_id=uuid4()
             )
             
-            # Create arrival event
-            event = Event(
-                timestamp=arrival_time,
-                event_type=EventType.REQUEST_ARRIVAL,
-                payload={'request': request}
-            )
-            events.append(event)
+            # Create events for root tools
+            root_tools = request.get_root_tools()
+            for tool_name in root_tools:
+                tool_instance = request.tool_instances[tool_name]
+                event = Event(
+                    timestamp=arrival_time,
+                    tool_instance=tool_instance
+                )
+                events.append(event)
         
         return events
 

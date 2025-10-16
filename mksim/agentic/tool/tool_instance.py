@@ -39,6 +39,7 @@ class ToolInstance:
         tool_id: Unique identifier (format: "{request_id}_{tool_name}")
         tool_name: Name of the tool (node name in DAG)
         request_id: ID of the parent request
+        request: Reference to parent Request (set after creation)
         tool_template: Reference to the tool definition (AgenticTool)
         status: Current execution status
         start_time: When tool started executing (None if not started)
@@ -49,6 +50,7 @@ class ToolInstance:
     tool_name: str
     request_id: UUID
     tool_template: AgenticTool
+    request: Optional['Request'] = field(default=None, compare=False, hash=False, repr=False)
     
     status: ToolStatus = field(default=ToolStatus.PENDING)
     start_time: Optional[float] = field(default=None)

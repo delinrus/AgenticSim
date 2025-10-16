@@ -1,20 +1,14 @@
 """
 Event system for discrete-event simulation.
 
-Key design decision: EventQueue stores only START events (REQUEST_ARRIVAL, TOOL_START).
+Key design decision: EventQueue stores only tool start events.
+Each event is a ToolInstance ready to begin execution.
 TOOL_FINISH events are computed dynamically at each simulation step.
 """
 
 from dataclasses import dataclass, field
-from enum import Enum
-from typing import Dict, Any, List, Optional
+from typing import Any, List, Optional
 from heapq import heappush, heappop
-
-
-class EventType(Enum):
-    """Types of events in the simulation."""
-    REQUEST_ARRIVAL = 1  # New request arrives in the system
-    TOOL_START = 2       # Tool instance starts execution
 
 
 @dataclass(order=True)
@@ -23,18 +17,16 @@ class Event:
     Discrete event in the simulation.
     
     Events are ordered by timestamp (primary) and priority (secondary).
-    The payload is not compared for ordering.
+    Each event represents a ToolInstance ready to start.
     
     Attributes:
         timestamp: Simulation time when event occurs (seconds)
-        event_type: Type of event
-        payload: Event-specific data (not used for ordering)
+        tool_instance: ToolInstance ready to start
         priority: Tiebreaker for events with same timestamp (lower = higher priority)
     """
     timestamp: float
-    event_type: EventType = field(compare=False)
+    tool_instance: Any = field(compare=False)  # ToolInstance (Any to avoid circular import)
     priority: int = field(default=0, compare=True)
-    payload: Dict[str, Any] = field(default_factory=dict, compare=False)
     
     def __post_init__(self):
         """Validate timestamp is non-negative."""
